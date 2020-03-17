@@ -31,12 +31,14 @@ npm install react-hook-tree
 JSON data Format
 
 ```javascript
-{"tree": [
 {
+  "tree": [
+    {
       "_id": "...",
       "children": [...],
       "item": { "name": "..." }
     }
+]
 ```
 
 See the full example in example folder
