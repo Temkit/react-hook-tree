@@ -1,0 +1,21 @@
+img {
+  width: 12px;
+  margin-right: 12px;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+
+.ripple:active {
+  background-color: #c0c0c0;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+.disabled {
+  filter: opacity(0.2);
+}
