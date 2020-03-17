@@ -1,4 +1,4 @@
-## React Hook Carousel
+## React Hook Tree
 
 [1]: https://github.com/Temkit/react-hook-tree.git
 
