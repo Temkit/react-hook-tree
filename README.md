@@ -156,12 +156,26 @@ to get the data modified if you use the **getData** props, you can simply do :
 
     <Tree treeData={data} getData={setData} lineStyle={{color:  "blue" }} showActions={false} />
 
-#### License
+### Comming Features
 
-Copyright (c) 2020 Temkit Sidali
+- Storybook integration for to illustrate all the possible variation which could be done using react-hook-tree
+- Tests
 
+feel free to ask for any feature or report a bug buy add in a new issue [add new issue ](https://github.com/Temkit/react-hook-tree/issues/new)
+
+### License
+
+Copyright (c) 2020 **Temkit Sidali**.
 Licensed under the MIT license.
 
-Free as in free Beer.
+_Free as in free Beer._ [](https://graphemica.com/%F0%9F%8D%BA)🍺🍺
 
-Icons from [www.flaticon.com](https://www.flaticon.com/) [Those Icon](https://www.flaticon.com/authors/those-icons) [Dave Gandy](https://www.flaticon.com/authors/dave-gandy)
+**_Icons from_** [www.flaticon.com](https://www.flaticon.com/) **_From_** :
+
+- [Those Icon](https://www.flaticon.com/authors/those-icons)
+- [Dave Gandy](https://www.flaticon.com/authors/dave-gandy)
+
+**_Dependencies :_**
+
+- [simple grid](https://github.com/zachacole/Simple-Grid)
+- [react-hook-form](https://github.com/react-hook-form/react-hook-form)
