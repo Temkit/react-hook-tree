@@ -7,7 +7,7 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 - Vertical Menus
 - File system navigator displaying folders and files
 
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.18.25.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf//////////wEaDGV1LWNlbnRyYWwtMSJHMEUCIQDu/X%2bwM3hKBe64HjU3GI1EglGijoQ/bprtqmT/XV0G6gIgIOl7lxOHMO0LqgWIyLGZ4Y4dt6BKz20PuBwyEYvc9nUquQEIwP//////////ARAAGgw0NTYwODEyNDUwNTgiDA5WdFhCe9eXDN9GjCqNAfARXuo1x%2b8L2chmeISJiCHqadBd6X5x3irEF4t24jqzbLbMa748x3z1egmcIUOi%2b0v8e1wMGCDSZqV1kxNgo8%2b7xX7z8NjSR5yN78F0YClMZkCk3EK3LOdUJOb7We%2b8a%2bKJhde63SmbFKszfLI91LIR9%2b1kDQujG0ml%2bOyKvVv0yMGCqqu/jcCyraHoRzCd9cjzBTqhAuO9/C1Fu7d3pZRrsX7hHphHkiYKHUzf3kz1lp7/5URVs4w%2bxn/oAks0yA1MLb1dk19IQ69O6ItHamVD4pDFZYEoKCU3nymPIcbMSRqYk3vnR5l2OBnu6OIOF3mAMlGG/DE48sAmiHezmmwL3spr95PwyanxuysYDzlslGuJxUc5DBG%2bYInaHO9QYpaJWAmrdaGFQm3K%2bsb8ynR4qPv6OFdhnMAatskCpNWeBaWxX0W8Ps0TmT/exFRGGzRzeylHeWfCQUa4sQiekxFEot61GDfEc5NlAy%2bEuPwIVS7oZeHsHhN0k58aAYGG4dqnFjiDhbM7DiYR1/mjeI5cYcxQUvMy2nQRUIS8h7K0pzv%2bJG/bQAFusBJ8CeCVXTJjMB7RM1A=&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200318T155829Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAWUMEPQOBAMFF2MES/20200318/eu-west-3/s3/aws4_request&X-Amz-Signature=d96bc64b8fea1e563004b1f66edc8358382f7a7085f62db54bc5f3bc50cdae95)
+![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.18.25.png)
 
 ## Quick start
 
@@ -92,7 +92,7 @@ with **itemAttributes** you can add more attribute to each node, here for exampl
 
 Each node will be editable over an edit button which triggers a popup modal where you can edit these data you added.
 
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.52.58.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf//////////wEaDGV1LWNlbnRyYWwtMSJHMEUCIQDu/X%2bwM3hKBe64HjU3GI1EglGijoQ/bprtqmT/XV0G6gIgIOl7lxOHMO0LqgWIyLGZ4Y4dt6BKz20PuBwyEYvc9nUquQEIwP//////////ARAAGgw0NTYwODEyNDUwNTgiDA5WdFhCe9eXDN9GjCqNAfARXuo1x%2b8L2chmeISJiCHqadBd6X5x3irEF4t24jqzbLbMa748x3z1egmcIUOi%2b0v8e1wMGCDSZqV1kxNgo8%2b7xX7z8NjSR5yN78F0YClMZkCk3EK3LOdUJOb7We%2b8a%2bKJhde63SmbFKszfLI91LIR9%2b1kDQujG0ml%2bOyKvVv0yMGCqqu/jcCyraHoRzCd9cjzBTqhAuO9/C1Fu7d3pZRrsX7hHphHkiYKHUzf3kz1lp7/5URVs4w%2bxn/oAks0yA1MLb1dk19IQ69O6ItHamVD4pDFZYEoKCU3nymPIcbMSRqYk3vnR5l2OBnu6OIOF3mAMlGG/DE48sAmiHezmmwL3spr95PwyanxuysYDzlslGuJxUc5DBG%2bYInaHO9QYpaJWAmrdaGFQm3K%2bsb8ynR4qPv6OFdhnMAatskCpNWeBaWxX0W8Ps0TmT/exFRGGzRzeylHeWfCQUa4sQiekxFEot61GDfEc5NlAy%2bEuPwIVS7oZeHsHhN0k58aAYGG4dqnFjiDhbM7DiYR1/mjeI5cYcxQUvMy2nQRUIS8h7K0pzv%2bJG/bQAFusBJ8CeCVXTJjMB7RM1A=&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200318T155956Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAWUMEPQOBAMFF2MES/20200318/eu-west-3/s3/aws4_request&X-Amz-Signature=edeeeb69d38a4ec0f3bc49f0a6222914fc3303d11f3cae463a626e4f0e3970a0)
+![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.52.58.png)
 
 you can configure what ever data you want in these types for now **input text** and **checkbox**, more data types will be available in next updates.
 
@@ -115,7 +115,7 @@ each data configuration have these attributes : name, type, placeholder and clas
     		},
         ]
 
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.55.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf//////////wEaDGV1LWNlbnRyYWwtMSJHMEUCIQDu/X%2bwM3hKBe64HjU3GI1EglGijoQ/bprtqmT/XV0G6gIgIOl7lxOHMO0LqgWIyLGZ4Y4dt6BKz20PuBwyEYvc9nUquQEIwP//////////ARAAGgw0NTYwODEyNDUwNTgiDA5WdFhCe9eXDN9GjCqNAfARXuo1x%2b8L2chmeISJiCHqadBd6X5x3irEF4t24jqzbLbMa748x3z1egmcIUOi%2b0v8e1wMGCDSZqV1kxNgo8%2b7xX7z8NjSR5yN78F0YClMZkCk3EK3LOdUJOb7We%2b8a%2bKJhde63SmbFKszfLI91LIR9%2b1kDQujG0ml%2bOyKvVv0yMGCqqu/jcCyraHoRzCd9cjzBTqhAuO9/C1Fu7d3pZRrsX7hHphHkiYKHUzf3kz1lp7/5URVs4w%2bxn/oAks0yA1MLb1dk19IQ69O6ItHamVD4pDFZYEoKCU3nymPIcbMSRqYk3vnR5l2OBnu6OIOF3mAMlGG/DE48sAmiHezmmwL3spr95PwyanxuysYDzlslGuJxUc5DBG%2bYInaHO9QYpaJWAmrdaGFQm3K%2bsb8ynR4qPv6OFdhnMAatskCpNWeBaWxX0W8Ps0TmT/exFRGGzRzeylHeWfCQUa4sQiekxFEot61GDfEc5NlAy%2bEuPwIVS7oZeHsHhN0k58aAYGG4dqnFjiDhbM7DiYR1/mjeI5cYcxQUvMy2nQRUIS8h7K0pzv%2bJG/bQAFusBJ8CeCVXTJjMB7RM1A=&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200318T155933Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAWUMEPQOBAMFF2MES/20200318/eu-west-3/s3/aws4_request&X-Amz-Signature=d023885f4c6ff8f2eb4d6efbe5c86e773ce5c821fae9e144d2010c2e0e0dc497)
+![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.55.png)
 
 as you can see the attributes dynamically create a form.
 
@@ -140,7 +140,7 @@ You can edit each node as explained in [Edit](#edit)
 Each node can be deleted,
 if a node is deleted all its children will be deleted, This action cannot be undone. This will permanently delete the node, and remove all children associations.
 
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.29.png?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf//////////wEaDGV1LWNlbnRyYWwtMSJHMEUCIQDu/X%2bwM3hKBe64HjU3GI1EglGijoQ/bprtqmT/XV0G6gIgIOl7lxOHMO0LqgWIyLGZ4Y4dt6BKz20PuBwyEYvc9nUquQEIwP//////////ARAAGgw0NTYwODEyNDUwNTgiDA5WdFhCe9eXDN9GjCqNAfARXuo1x%2b8L2chmeISJiCHqadBd6X5x3irEF4t24jqzbLbMa748x3z1egmcIUOi%2b0v8e1wMGCDSZqV1kxNgo8%2b7xX7z8NjSR5yN78F0YClMZkCk3EK3LOdUJOb7We%2b8a%2bKJhde63SmbFKszfLI91LIR9%2b1kDQujG0ml%2bOyKvVv0yMGCqqu/jcCyraHoRzCd9cjzBTqhAuO9/C1Fu7d3pZRrsX7hHphHkiYKHUzf3kz1lp7/5URVs4w%2bxn/oAks0yA1MLb1dk19IQ69O6ItHamVD4pDFZYEoKCU3nymPIcbMSRqYk3vnR5l2OBnu6OIOF3mAMlGG/DE48sAmiHezmmwL3spr95PwyanxuysYDzlslGuJxUc5DBG%2bYInaHO9QYpaJWAmrdaGFQm3K%2bsb8ynR4qPv6OFdhnMAatskCpNWeBaWxX0W8Ps0TmT/exFRGGzRzeylHeWfCQUa4sQiekxFEot61GDfEc5NlAy%2bEuPwIVS7oZeHsHhN0k58aAYGG4dqnFjiDhbM7DiYR1/mjeI5cYcxQUvMy2nQRUIS8h7K0pzv%2bJG/bQAFusBJ8CeCVXTJjMB7RM1A=&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20200318T155903Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAWUMEPQOBAMFF2MES/20200318/eu-west-3/s3/aws4_request&X-Amz-Signature=0164fcf0ef61a578f0f488bfb5ae3d3e2d0d7361657a7af4d6be6f3006d2350d)
+![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.29.png)
 
 ## Get the data
 
