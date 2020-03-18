@@ -158,6 +158,8 @@ to get the data modified if you use the **getData** props, you can simply do :
 
 ### Comming Features
 
+- Add Checkbox selecting items
+- Codes & Algorithmes optimisation
 - Storybook integration for to illustrate all the possible variation which could be done using react-hook-tree
 - Tests
 
@@ -179,3 +181,4 @@ _Free as in free Beer._ [](https://graphemica.com/%F0%9F%8D%BA)🍺🍺
 
 - [simple grid](https://github.com/zachacole/Simple-Grid)
 - [react-hook-form](https://github.com/react-hook-form/react-hook-form)
+- [hughsk/flat](https://github.com/hughsk/flat)
