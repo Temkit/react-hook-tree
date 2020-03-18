@@ -20,14 +20,21 @@ module.exports = {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.(jpg|png|svg)$/,
-        use: ["url-loader"]
+        test: /\.(png)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8000
+            }
+          }
+        ]
       }
     ]
   },
 
   resolve: {
-    extensions: [".js", ".css"]
+    extensions: [".js", ".css", ".png"]
   },
   externals: {
     react: "commonjs react"

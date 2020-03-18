@@ -1,0 +1,33 @@
+{
+  "name": "react-hook-tree-example",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "description": "styled tree that can be used to display hierarchy data",
+  "main": "index.js",
+  "author": "Sidali Temkit",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-scripts": "3.4.0",
+    "react-hook-tree": "0.0.5"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {}
+}

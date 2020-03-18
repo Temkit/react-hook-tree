@@ -1,4 +1,7 @@
 @import "./icon.css";
+@import "./modal.css";
+@import "./grid.css";
+@import "./formElement.css";
 
 ul,
 #yet-myUL {
@@ -19,9 +22,12 @@ ul,
   background-color: #c0c0c020;
 }
 
+.li:hover .actions {
+  display: block !important;
+}
+
 .li {
   font-family: inherit;
-  padding: 12px;
   display: flex;
   align-items: center;
 }
@@ -57,4 +63,12 @@ ul,
 
 .yet-count {
   padding-left: 12px;
+}
+
+input {
+  height: 21px;
+  font-weight: 400;
+  padding: 6px;
+  width: calc(100% - 16px);
+  font-size: 14px;
 }

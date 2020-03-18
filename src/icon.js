@@ -1,20 +1,26 @@
 import React, { useEffect, useState } from "react";
 
 const Icon = ({ direction, type, hasChildren, style }) => {
+  if (type && type.includes("folder") && hasChildren) {
+    direction = "";
+    type = "folder-full";
+  } else if (type && type.includes("folder") && !hasChildren) {
+    direction = "";
+    type = "folder-colored";
+  } else if (type && Array.isArray(type)) {
+    type = "-" + type.join("-");
+  } else {
+    type = "";
+  }
+
   return (
-    direction &&
-    direction.length > 0 && (
-      <img
-        src={
-          require("./icons/" +
-            direction +
-            (type && type.length > 0 ? "-" + type.join("-") : "") +
-            ".png").default
-        }
-        className={`ripple ${!hasChildren ? "disabled" : ""}`}
-        style={{ ...style }}
-      />
-    )
+    <img
+      src={require("./icons/" + direction + type + ".png").default}
+      className={`ripple ${
+        !hasChildren && !type.includes("folder") ? "disabled" : ""
+      } ${type.includes("folder") ? "folderIcon" : ""}`}
+      style={{ ...style }}
+    />
   );
 };
 

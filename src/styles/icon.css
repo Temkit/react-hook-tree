@@ -5,6 +5,24 @@ img {
   border-radius: 25px;
 }
 
+.folderIcon {
+  width: 21px;
+  margin-right: 12px;
+  padding: 6px;
+  border-radius: 0px;
+}
+
+.actions {
+  display: none;
+}
+
+.actions img {
+  width: 21px;
+  margin-right: 12px;
+  border-radius: 0px;
+  padding: 0px;
+}
+
 .ripple {
   background-position: center;
   transition: background 0.8s;

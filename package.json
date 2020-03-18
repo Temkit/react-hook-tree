@@ -1,6 +1,6 @@
 {
   "name": "react-hook-tree",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "lightweight simple react hook nested tree view,children nodes are placed inside their parent node in DOM. The parent node has an outlet to keep all the children nodes.",
   "main": "lib/index.js",
   "private": false,
@@ -31,9 +31,14 @@
     "css-loader": "^3.4.2",
     "file-loader": "^5.1.0",
     "image-webpack-loader": "^6.0.0",
+    "responsive-loader": "^1.2.0",
     "style-loader": "^1.1.3",
     "url-loader": "^3.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "flat": "^5.0.0",
+    "react-hook-form": "^5.1.1"
   }
 }
