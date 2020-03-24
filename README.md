@@ -47,7 +47,7 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
     		    ]
     	    }
 
-    <Tree treeData={data} iconType={["folder"]} compact={true} itemAttributes={attributes} />
+    <Tree treeData={data} iconType="folder" compact={true} itemAttributes={attributes} />
 
 ### Demo
 
@@ -62,7 +62,7 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 | treeData       | Json     | yes      | -       | the data to render (please see json file in example folder)              |
 | count          | boolean  | no       | -       | Show children count on each node                                         |
 | lang           | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                |
-| itemAttributes | json     | no       | -       | Item Attribute, please see [Lang Data Object](#data)                     |
+| itemAttributes | json     | no       | -       | Item Attribute, please see [Data Object Attribute](#data)                |
 | showActions    | boolean  | no       | false   | Show the edit and delete button on hover                                 |
 | getData        | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled |
 |                |
@@ -161,11 +161,9 @@ col-3 : 25% screen width
 
 Check the link [simple grid](https://github.com/zachacole/Simple-Grid), for more informations.
 
-## Lang
+#### Text
 
-### Edit
-
-You can edit each node as explained in [Edit](#edit)
+all the text used have to be added using a [JSON object](#lang), so you can deploy it any language you want. you can also add the attribute "rtl" as true, to deploy in any rtl language.
 
 ## Actions
 
@@ -196,10 +194,17 @@ to get the data modified if you use the **getData** props, you can simply do :
 
 ### Comming Features
 
-- [x] Add Json langage file
+- [x] Add Json language file
+- [x] Add storybook for better documentation
 - [ ] Add Checkbox selecting items
 - [ ] Jest test
+- [ ] Better Readme and fix the spelling errors :)
+- [ ] Create a dedicated website
+- [ ] Create a slack and provide free support
 - [ ] Codes & Algorithmes optimisation
+- [ ] Writing contributing guidelines
+- [ ] Pull request template
+- [ ] Issue templates
 
 feel free to ask for any feature or report a bug buy add in a new issue [add new issue ](https://github.com/Temkit/react-hook-tree/issues/new)
 
