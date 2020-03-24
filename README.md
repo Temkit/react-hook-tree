@@ -1,3 +1,5 @@
+![React Hook tree](https://s3.eu-west-3.amazonaws.com/img.yet.expert/rht/logo512.png)
+
 ## Introduction
 
 Get started with React Hook Tree. the **_most powerful Tree View React Component_** for building responsive, mobile-first lightweight
@@ -25,6 +27,7 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 
     import data from  "./treeData.json";
     import Tree from  "react-hook-tree";
+
     attributes = {
     		    [
     			    {
@@ -48,29 +51,48 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 
 ### Demo
 
-[https://react-hook-tree.now.sh/](https://react-hook-tree.now.sh/)
+[https://rht.now.sh/](https://rht.now.sh/)
 
 ### Props
 
 #### Data
 
-| Option         | types    | required | default | Description                                 |
-| -------------- | -------- | -------- | ------- | ------------------------------------------- |
-| treeData       | Json     | yes      | -       | the data to render (please see json format) |
-| count          | number   | no       | -       | Show children count on each node            |
-| itemAttributes | json     | no       | -       | Show children count on each node            |
-| getData        | function | no       | -       | return the modified data                    |
-| showActions    | boolean  | no       | false   | Show the edit and delete button on hover    |
+| Option         | types    | required | default | Description                                                              |
+| -------------- | -------- | -------- | ------- | ------------------------------------------------------------------------ |
+| treeData       | Json     | yes      | -       | the data to render (please see json file in example folder)              |
+| count          | boolean  | no       | -       | Show children count on each node                                         |
+| lang           | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                |
+| itemAttributes | json     | no       | -       | Item Attribute, please see [Lang Data Object](#data)                     |
+| showActions    | boolean  | no       | false   | Show the edit and delete button on hover                                 |
+| getData        | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled |
+|                |
 
-#### Style
+[](#lang)
 
-| Option    | types             | required | Description                                                         |
-| --------- | ----------------- | -------- | ------------------------------------------------------------------- |
-| iconType  | string            | no       | one of ("folder","rounded","thick") or leave empty for simple arrow |
-| style     | React Style Props | no       | Global container inline style                                       |
-| lineStyle | React Style Props | no       | Line inline style                                                   |
-| iconStyle | React Style Props | no       | Icon inline style                                                   |
-| compact   | boolean           | no       | add padding to line                                                 |
+#### LangData : Lang Attribute
+
+    	{
+    		"modal": {
+    			"edit": {
+    				"title": "Edit Modal",
+    				"warning": "Check carfully your data before saving !",
+    				"content": "You are editing the %1 node",
+    				"button": "save"
+    			},
+    			"delete": {
+    				"title": "Are you absolutely sure?",
+    				"warning": "Unexpected bad things will happen if you don’t read this!",
+    				"content": "This action cannot be undone. This will permanently delete the %1, and remove all children associations. Please type confirmed to delete.",
+    				"confirmation": "please type %1 to delete",
+    				"verification": "confirm",
+    				"button": "delete this node"
+    			}
+    		}
+    	}
+
+_See Lang example file in Lang folder_
+
+[](#data)
 
 #### TreeData : _Attribute data Format_
 
@@ -83,7 +105,17 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
         }
     ]
 
-_See Json example file in example folder_
+_See Json example file in Data folder_
+
+#### Style
+
+| Option    | types             | required | Description                                                         |
+| --------- | ----------------- | -------- | ------------------------------------------------------------------- |
+| iconType  | string            | no       | one of ("folder","rounded","thick") or leave empty for simple arrow |
+| style     | React Style Props | no       | Global container inline style                                       |
+| lineStyle | React Style Props | no       | Line inline style                                                   |
+| iconStyle | React Style Props | no       | Icon inline style                                                   |
+| compact   | boolean           | no       | add padding to line                                                 |
 
 ### <a name="edit"></a> itemAttributes : _Attribute data Format_
 
@@ -129,6 +161,12 @@ col-3 : 25% screen width
 
 Check the link [simple grid](https://github.com/zachacole/Simple-Grid), for more informations.
 
+## Lang
+
+### Edit
+
+You can edit each node as explained in [Edit](#edit)
+
 ## Actions
 
 ### Edit
@@ -158,10 +196,10 @@ to get the data modified if you use the **getData** props, you can simply do :
 
 ### Comming Features
 
-- Add Checkbox selecting items
-- Codes & Algorithmes optimisation
-- Storybook integration for to illustrate all the possible variation which could be done using react-hook-tree
-- Tests
+- [x] Add Json langage file
+- [ ] Add Checkbox selecting items
+- [ ] Jest test
+- [ ] Codes & Algorithmes optimisation
 
 feel free to ask for any feature or report a bug buy add in a new issue [add new issue ](https://github.com/Temkit/react-hook-tree/issues/new)
 
@@ -169,8 +207,6 @@ feel free to ask for any feature or report a bug buy add in a new issue [add new
 
 Copyright (c) 2020 **Temkit Sidali**.
 Licensed under the MIT license.
-
-_Free as in free Beer._ [](https://graphemica.com/%F0%9F%8D%BA)🍺🍺
 
 **_Icons from_** [www.flaticon.com](https://www.flaticon.com/) **_From_** :
 

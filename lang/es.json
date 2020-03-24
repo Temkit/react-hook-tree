@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "edit": {
+      "title": "Editar modal",
+      "warning": "¡Revise cuidadosamente sus datos antes de guardar!",
+      "content": "Estás editando el nodo %1",
+      "button": "Salvar"
+    },
+    "delete": {
+      "title": "¿Estás absolutamente seguro?",
+      "warning": "¡Cosas malas inesperadas sucederán si no lees esto!",
+      "content": "Esta acción no se puede deshacer. Esto eliminará permanentemente el% 1 y eliminará todas las asociaciones secundarias. Por favor escriba confirmado para eliminar.",
+      "confirmation": "escriba% 1 para eliminar",
+      "verification": "confirmar",
+      "button": "eliminar este nodo"
+    }
+  }
+}

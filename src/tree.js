@@ -1,11 +1,15 @@
+// @flow
+
 import React, { useEffect, useState } from "react";
 import Icon from "./icon";
 import Modal from "./modal";
 import flatten from "flat";
+import PropTypes from "prop-types";
 import "./styles/tree.css";
 
 const Tree = ({
   treeData,
+  lang,
   count,
   itemAttributes,
   iconType,
@@ -156,7 +160,14 @@ const Tree = ({
   return (
     <>
       {data && data.tree && data.tree.length > 0 && (
-        <ul style={{ ...style }} id="yet-myUL">
+        <ul
+          style={{
+            direction: lang && lang.rtl ? "rtl" : "ltr",
+            ...style,
+            marginTop: 30
+          }}
+          id="yet-myUL"
+        >
           {data.tree.map(child => makeChild(child))}
         </ul>
       )}
@@ -165,10 +176,55 @@ const Tree = ({
         type={modal}
         deleteItem={deleteItem}
         editItem={editItem}
+        lang={lang && lang.modal}
+        rtl={lang && lang.rtl}
         attributes={itemAttributes}
       />
     </>
   );
+};
+
+Tree.defaultProps = {
+  treeData: {
+    tree: []
+  },
+  lang: {
+    modal: {
+      edit: {
+        title: "Edit Modal",
+        warning: "Check carfully your data before saving !",
+        content: "You are editing the %1 node",
+        button: "save"
+      },
+      delete: {
+        title: "Are you absolutely sure?",
+        warning: "Unexpected bad things will happen if you don’t read this!",
+        content:
+          "This action cannot be undone. This will permanently delete the %1, and remove all children associations. Please type confirmed to delete.",
+        confirmation: "please type %1 to delete",
+        verification: "confirm",
+        button: "delete this node"
+      }
+    }
+  },
+  count: false,
+  compact: false,
+  showActions: false
+};
+
+Tree.propTypes = {
+  /** Boolean indicating whether the button should render as disabled */
+  treeData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  /** button label. */
+  lang: PropTypes.arrayOf(PropTypes.object).isRequired,
+  /** onClick handler */
+  count: PropTypes.bool,
+  /** component styles */
+  compact: PropTypes.bool,
+  /** component Actions */
+  showActions: PropTypes.bool,
+  /** component Get data */
+  getData: PropTypes.func
 };
 
 export default Tree;

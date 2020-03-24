@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "edit": {
+      "title": "Modifier le modal",
+      "warning": "Vérifiez soigneusement vos données avant d'enregistrer !",
+      "content": "Vous modifiez le nœud %1",
+      "button": "Enregistrer"
+    },
+    "delete": {
+      "title": "Êtes-vous absolument sûr ?",
+      "warning": "De mauvaises choses inattendues se produiront si vous ne lisez pas ceci!",
+      "content": "Cette action ne peut pas être annulée. Cela supprimera définitivement %1 et supprimera toutes les associations enfants.",
+      "confirmation": "veuillez entrer %1 pour supprimer",
+      "verification": "confirmé",
+      "button": "Supprimer ce noeud"
+    }
+  }
+}

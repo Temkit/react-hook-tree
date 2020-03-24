@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 const Icon = ({ direction, type, hasChildren, style }) => {
-  if (type && type.includes("folder") && hasChildren) {
+  if (type && type === "folder" && hasChildren) {
     direction = "";
     type = "folder-full";
-  } else if (type && type.includes("folder") && !hasChildren) {
+  } else if (type && type === "folder" && !hasChildren) {
     direction = "";
     type = "folder-colored";
   } else if (type && Array.isArray(type)) {

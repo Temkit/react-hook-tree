@@ -3,7 +3,7 @@ import FormElement from "./formElement";
 import DeleteModal from "./modal/delete";
 import EditModal from "./modal/edit";
 
-const Modal = ({ type, attributes, deleteItem, editItem }) => {
+const Modal = ({ type, attributes, lang, rtl, deleteItem, editItem }) => {
   const [show, setShow] = useState(null);
   const [operation, setOperation] = useState("");
 
@@ -30,12 +30,16 @@ const Modal = ({ type, attributes, deleteItem, editItem }) => {
           editItem={editItem}
           attributes={attributes}
           setShow={setShow}
+          lang={lang.edit}
+          rtl={rtl}
         />
       ) : show === "delete" ? (
         <DeleteModal
           object={type[operation]}
           deleteItem={deleteItem}
           setShow={setShow}
+          lang={lang.delete}
+          rtl={rtl}
         />
       ) : (
         <div />

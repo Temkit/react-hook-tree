@@ -54,11 +54,9 @@
 /* The Close Button */
 .close {
   color: black;
-  float: right;
   font-size: 28px;
   font-weight: bold;
-  margin-right: 12px;
-  margin-top: 6px;
+  margin: 7px;
 }
 
 .close:hover,

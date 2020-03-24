@@ -1,0 +1,18 @@
+{
+  "modal": {
+    "edit": {
+      "title": "模态修饰语",
+      "warning": "保存前请仔细检查数据！",
+      "content": "您修改节点％1",
+      "button": "保存到"
+    },
+    "delete": {
+      "title": "你确定吗",
+      "warning": "如果您不阅读本文，将会发生意想不到的坏事！",
+      "content": "此操作无法撤消。这将永久删除％1并删除所有子关联。",
+      "confirmation": "请输入％1删除",
+      "verification": "已确认",
+      "button": "删除该节点"
+    }
+  }
+}
