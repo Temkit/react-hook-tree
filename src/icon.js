@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Icon = ({ direction, type, hasChildren, style }) => {
+const Icon = ({ direction, type, rtl, hasChildren, style }) => {
   if (type && type === "folder" && hasChildren) {
     direction = "";
     type = "folder-full";
@@ -19,7 +19,7 @@ const Icon = ({ direction, type, hasChildren, style }) => {
       className={`ripple ${
         !hasChildren && !type.includes("folder") ? "disabled" : ""
       } ${type.includes("folder") ? "folderIcon" : ""}`}
-      style={{ ...style }}
+      style={{ transform: rtl ? "scaleX(-1)" : "scaleX(1)", ...style }}
     />
   );
 };

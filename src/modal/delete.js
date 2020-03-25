@@ -21,9 +21,9 @@ const DeleteModal = ({ object, lang, rtl, deleteItem, setShow }) => {
         <p>
           {object &&
             object.item &&
-            lang.content.replace("%1", object.item.name)}
+            lang.content.replace("%%%", object.item.name)}
         </p>
-        <p>{lang.confirmation.replace("%1", lang.verification)}</p>
+        <p>{lang.confirmation.replace("%%%", lang.verification)}</p>
         <div className="delete">
           <input
             key={object && object.item && object.item._id}

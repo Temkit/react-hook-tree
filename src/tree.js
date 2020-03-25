@@ -1,5 +1,3 @@
-// @flow
-
 import React, { useEffect, useState } from "react";
 import Icon from "./icon";
 import Modal from "./modal";
@@ -17,8 +15,8 @@ const Tree = ({
   lineStyle,
   iconStyle,
   compact,
-  showActions,
-  getData
+  actions,
+  onChange
 }) => {
   const [active, setActive] = useState(false);
   const [modal, setModal] = useState("none");
@@ -29,8 +27,8 @@ const Tree = ({
   }, []);
 
   useEffect(() => {
-    if (getData) {
-      getData(data);
+    if (onChange) {
+      onChange(data);
     }
   }, [data]);
 
@@ -103,6 +101,7 @@ const Tree = ({
           style={{ padding: compact ? 0 : 12 }}
         >
           <Icon
+            rtl={lang && lang.rtl}
             direction={active[child._id] ? "down" : "right"}
             type={iconType}
             hasChildren={child.children && child.children.length > 0}
@@ -119,7 +118,7 @@ const Tree = ({
             </span>
           )}
           <span style={{ flex: 1 }} />
-          {showActions && (
+          {actions && (
             <div className="actions">
               <img
                 src={require("./icons/edit.png").default}
@@ -209,7 +208,7 @@ Tree.defaultProps = {
   },
   count: false,
   compact: false,
-  showActions: false
+  actions: false
 };
 
 Tree.propTypes = {
@@ -222,9 +221,9 @@ Tree.propTypes = {
   /** component styles */
   compact: PropTypes.bool,
   /** component Actions */
-  showActions: PropTypes.bool,
+  actions: PropTypes.bool,
   /** component Get data */
-  getData: PropTypes.func
+  onChange: PropTypes.func
 };
 
 export default Tree;

@@ -1,0 +1,158 @@
+{
+  "tree": [
+    {
+      "_id": "uMfYOav",
+      "children": [],
+      "item": { "name": "家庭和装饰" }
+    },
+    {
+      "_id": "GGEGjKu",
+      "children": [
+        {
+          "_id": "IeTEeRRk",
+          "children": [
+            {
+              "_id": "IerTERRk",
+              "children": [],
+              "item": { "name": "希腊" }
+            },
+            {
+              "_id": "wnSisyyTq",
+              "children": [],
+              "item": { "name": "mille feuilles" }
+            },
+            {
+              "_id": "CFRQieLgg",
+              "children": [],
+              "item": { "name": "啤酒" }
+            }
+          ],
+          "item": { "name": "Cafeteria" }
+        },
+        {
+          "_id": "wnSisTq",
+          "children": [],
+          "item": { "name": "糖果" }
+        },
+        {
+          "_id": "CFRQieL",
+          "children": [],
+          "item": { "name": "Patisserie" }
+        },
+        {
+          "_id": "lTFJclb",
+          "children": [],
+          "item": { "name": "Creamery" }
+        },
+        {
+          "_id": "ZsbECTa",
+          "children": [],
+          "item": { "name": "Snac" }
+        },
+        {
+          "_id": "GJEnYtO",
+          "children": [],
+          "item": { "name": "餐厅" }
+        },
+        {
+          "_id": "s01MkVl",
+          "children": [],
+          "item": { "name": "快餐" }
+        }
+      ],
+      "item": { "name": "Catering" }
+    },
+    {
+      "_id": "qUJNWBY",
+      "children": [
+        {
+          "_id": "Ug1qumE",
+          "children": [
+            {
+              "_id": "dVz0vdS",
+              "children": [],
+              "item": {
+                "name": "男士准备穿"
+              }
+            },
+            {
+              "_id": "qCo0UFi",
+              "children": [],
+              "item": { "name": "Shoe" }
+            },
+            {
+              "_id": "cBINLaf",
+              "children": [],
+              "item": { "name": "繁体" }
+            }
+          ],
+          "item": { "name": "Man" }
+        },
+        {
+          "_id": "laYYJYu",
+          "children": [
+            {
+              "_id": "BOQhxKt",
+              "children": [],
+              "item": { "name": "内衣" }
+            },
+            {
+              "_id": "WuXHxjb",
+              "children": [],
+              "item": {
+                "name": "成衣女子"
+              }
+            },
+            {
+              "_id": "h0SpmIZ",
+              "children": [],
+              "item": { "name": "Shoe" }
+            },
+            {
+              "_id": "xLBaoiH",
+              "children": [],
+              "item": { "name": "航行" }
+            },
+            {
+              "_id": "TkcWnvg",
+              "children": [],
+              "item": { "name": "繁体" }
+            }
+          ],
+          "item": { "name": "女人" }
+        },
+        {
+          "_id": "xvdGyBf",
+          "children": [
+            {
+              "_id": "uvTwjpu",
+              "children": [],
+              "item": {
+                "name": "成衣的孩子"
+              }
+            },
+            {
+              "_id": "0Xtolvn",
+              "children": [],
+              "item": {
+                "name": "婴儿和婴儿用品"
+              }
+            },
+            {
+              "_id": "BbyJHEY",
+              "children": [],
+              "item": { "name": "Shoe" }
+            }
+          ],
+          "item": { "name": "Child" }
+        },
+        {
+          "_id": "QU1oDlV",
+          "children": [],
+          "item": { "name": "运动" }
+        }
+      ],
+      "item": { "name": "服装" }
+    }
+  ]
+}

@@ -32,7 +32,7 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
                 <p>
                   {object &&
                     object.item &&
-                    lang.content.replace("%1", object.item.name)}
+                    lang.content.replace("%%%", object.item.name)}
                 </p>
               </div>
             </div>
