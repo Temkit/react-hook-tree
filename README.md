@@ -5,15 +5,20 @@
 Get started with React Hook Tree. the **_most powerful Tree View React Component_** for building responsive, mobile-first lightweight
 
 - Data Tree Views
-- Represent hierarchical data in json format
+- Display hierarchical data in a tree-view structure.
 - Vertical Menus
 - File system navigator displaying folders and files
 
-With React Hook Tree View Component you can :
+## Full Features
 
-- Display hierarchical data in a tree-view structure.
-- Edit node text in-line with advanced editable nodes support.
-- Easily customize nodes, expand icons, and collapse icons
+- Expand/Collapse
+- Delete button
+- Edit button
+- Custom & multiple node object attributes
+- Unlimited nesting
+- Fully customizable text content (you can deploy in any language)
+- RTL support
+- Fully customizable style
 
 Demo and documentation : [rht.now.sh](https://rht.now.sh/)
 
@@ -206,7 +211,7 @@ to get the data modified if you use the **onChange** props, you can simply do :
 
     <Tree treeData={data} onChange={setData} lineStyle={{color: "blue" }} actions={false} />
 
-### Comming Soon Features
+### Comming Features
 
 - [x] Add Json language file
 - [x] Add storybook for better documentation
@@ -216,6 +221,8 @@ to get the data modified if you use the **onChange** props, you can simply do :
 - [ ] Sorting tree nodes
 - [ ] Sorting tree nodes
 - [ ] Tree node with custom icons
+- [ ] Delete & Edit animation
+- [ ] Style modal
 - [ ] Lazy loading
 - [ ] Jest test
 - [ ] Better Readme and fix the spelling errors :)
