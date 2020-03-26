@@ -70,14 +70,14 @@ yarn add react-hook-tree
 
 #### Data
 
-| Option   | types    | required | default | Description                                                              |
-| -------- | -------- | -------- | ------- | ------------------------------------------------------------------------ |
-| treeData | Json     | yes      | -       | the data to render (please see json file in example folder)              |
-| count    | boolean  | no       | -       | Show children count on each node                                         |
-| lang     | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                |
-| node     | json     | no       | -       | Item Attribute, please see [Data Object Attribute](#data)                |
-| actions  | boolean  | no       | false   | Show the edit and delete button on hover                                 |
-| onChange | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled |
+| Option   | types    | required | default | Description                                                                 |
+| -------- | -------- | -------- | ------- | --------------------------------------------------------------------------- |
+| treeData | Json     | yes      | -       | the data to render (please see json file in example folder)                 |
+| count    | boolean  | no       | -       | Show children count on each node                                            |
+| lang     | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                   |
+| node     | json     | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
+| actions  | boolean  | no       | false   | Show the edit and delete button on hover                                    |
+| onChange | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
 
 [](#lang)
