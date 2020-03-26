@@ -28,6 +28,18 @@
   animation-duration: 0.4s;
 }
 
+@media only screen and (max-width: 992px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
 /* Add Animation */
 @-webkit-keyframes animatetop {
   from {

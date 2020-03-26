@@ -60,7 +60,7 @@ yarn add react-hook-tree
         ]
     }
 
-<Tree treeData={data} iconType="folder" compact={true} itemAttributes={attributes} />
+<Tree treeData={data} iconType="folder" compact={true} node={attributes} />
 
 ### Demo And Documentation
 
@@ -70,15 +70,15 @@ yarn add react-hook-tree
 
 #### Data
 
-| Option         | types    | required | default | Description                                                              |
-| -------------- | -------- | -------- | ------- | ------------------------------------------------------------------------ |
-| treeData       | Json     | yes      | -       | the data to render (please see json file in example folder)              |
-| count          | boolean  | no       | -       | Show children count on each node                                         |
-| lang           | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                |
-| itemAttributes | json     | no       | -       | Item Attribute, please see [Data Object Attribute](#data)                |
-| actions        | boolean  | no       | false   | Show the edit and delete button on hover                                 |
-| onChange       | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled |
-|                |
+| Option   | types    | required | default | Description                                                              |
+| -------- | -------- | -------- | ------- | ------------------------------------------------------------------------ |
+| treeData | Json     | yes      | -       | the data to render (please see json file in example folder)              |
+| count    | boolean  | no       | -       | Show children count on each node                                         |
+| lang     | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                |
+| node     | json     | no       | -       | Item Attribute, please see [Data Object Attribute](#data)                |
+| actions  | boolean  | no       | false   | Show the edit and delete button on hover                                 |
+| onChange | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled |
+|          |
 
 [](#lang)
 
@@ -131,11 +131,11 @@ _See Json example file in Data folder_
 | iconStyle | React Style Props | no       | Icon inline style                                                   |
 | compact   | boolean           | no       | add padding to line                                                 |
 
-### <a name="edit"></a> itemAttributes : _Attribute data Format_
+### <a name="edit"></a> node : _Attribute data Format_
 
 Each node has a **name** which is an unchanging attribute.
 
-with **itemAttributes** you can add more attribute to each node, here for example i will add a **title** and a **checkbox**.
+with **node** you can add more attribute to each node, here for example i will add a **title** and a **checkbox**.
 
 Each node will be editable over an edit button which triggers a popup modal where you can edit these data you added.
 
@@ -213,18 +213,17 @@ to get the data modified if you use the **onChange** props, you can simply do :
 
 ### Comming Features
 
-- [x] Add Json language file
+- [x] Add Json language files
 - [x] Add storybook for better documentation
+- [x] Jest test
 - [ ] Checkbox support
 - [ ] Add Multiple node selection
 - [ ] Drag and drop in React Tree View/Tree List
-- [ ] Sorting tree nodes
 - [ ] Sorting tree nodes
 - [ ] Tree node with custom icons
 - [ ] Delete & Edit animation
 - [ ] Style modal
 - [ ] Lazy loading
-- [ ] Jest test
 - [ ] Better Readme and fix the spelling errors :)
 - [ ] Create a dedicated website
 - [ ] Create a slack and provide free support

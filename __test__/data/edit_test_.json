@@ -1,0 +1,158 @@
+{
+  "tree": [
+    {
+      "_id": "uMfYOav",
+      "children": [],
+      "item": { "name": "Decoration" }
+    },
+    {
+      "_id": "GGEGjKu",
+      "children": [
+        {
+          "_id": "IeTEeRRk",
+          "children": [
+            {
+              "_id": "IerTERRk",
+              "children": [],
+              "item": { "name": "Greek" }
+            },
+            {
+              "_id": "wnSisyyTq",
+              "children": [],
+              "item": { "name": "mille feuilles" }
+            },
+            {
+              "_id": "CFRQieLgg",
+              "children": [],
+              "item": { "name": "beer" }
+            }
+          ],
+          "item": { "name": "Cafeteria" }
+        },
+        {
+          "_id": "wnSisTq",
+          "children": [],
+          "item": { "name": "Confectionery" }
+        },
+        {
+          "_id": "CFRQieL",
+          "children": [],
+          "item": { "name": "Patisserie" }
+        },
+        {
+          "_id": "lTFJclb",
+          "children": [],
+          "item": { "name": "Creamery" }
+        },
+        {
+          "_id": "ZsbECTa",
+          "children": [],
+          "item": { "name": "Snac" }
+        },
+        {
+          "_id": "GJEnYtO",
+          "children": [],
+          "item": { "name": "Restaurant" }
+        },
+        {
+          "_id": "s01MkVl",
+          "children": [],
+          "item": { "name": "Fast Food" }
+        }
+      ],
+      "item": { "name": "Catering" }
+    },
+    {
+      "_id": "qUJNWBY",
+      "children": [
+        {
+          "_id": "Ug1qumE",
+          "children": [
+            {
+              "_id": "dVz0vdS",
+              "children": [],
+              "item": {
+                "name": "Men's ready to wear"
+              }
+            },
+            {
+              "_id": "qCo0UFi",
+              "children": [],
+              "item": { "name": "Shoe" }
+            },
+            {
+              "_id": "cBINLaf",
+              "children": [],
+              "item": { "name": "Traditional" }
+            }
+          ],
+          "item": { "name": "Man" }
+        },
+        {
+          "_id": "laYYJYu",
+          "children": [
+            {
+              "_id": "BOQhxKt",
+              "children": [],
+              "item": { "name": "lingerie" }
+            },
+            {
+              "_id": "WuXHxjb",
+              "children": [],
+              "item": {
+                "name": "Ready to wear woman"
+              }
+            },
+            {
+              "_id": "h0SpmIZ",
+              "children": [],
+              "item": { "name": "Shoe" }
+            },
+            {
+              "_id": "xLBaoiH",
+              "children": [],
+              "item": { "name": "Sailing" }
+            },
+            {
+              "_id": "TkcWnvg",
+              "children": [],
+              "item": { "name": "Traditional" }
+            }
+          ],
+          "item": { "name": "Woman" }
+        },
+        {
+          "_id": "xvdGyBf",
+          "children": [
+            {
+              "_id": "uvTwjpu",
+              "children": [],
+              "item": {
+                "name": "Ready to wear child"
+              }
+            },
+            {
+              "_id": "0Xtolvn",
+              "children": [],
+              "item": {
+                "name": "Baby & Infant Article"
+              }
+            },
+            {
+              "_id": "BbyJHEY",
+              "children": [],
+              "item": { "name": "Shoe" }
+            }
+          ],
+          "item": { "name": "Child" }
+        },
+        {
+          "_id": "QU1oDlV",
+          "children": [],
+          "item": { "name": "Sport" }
+        }
+      ],
+      "item": { "name": "Clothing" }
+    }
+  ]
+}

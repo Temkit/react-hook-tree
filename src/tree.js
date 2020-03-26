@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Icon from "./icon";
 import Modal from "./modal";
-import flatten from "flat";
+import { init, makeChild, deleteItem, editItem } from "./dataServices";
 import PropTypes from "prop-types";
 import "./styles/tree.css";
 
@@ -9,7 +8,7 @@ const Tree = ({
   treeData,
   lang,
   count,
-  itemAttributes,
+  node,
   iconType,
   style,
   lineStyle,
@@ -18,143 +17,17 @@ const Tree = ({
   actions,
   onChange
 }) => {
-  const [active, setActive] = useState(false);
+  const [expanded, setExpanded] = useState({});
+  const [data, setData] = useState(treeData);
   const [modal, setModal] = useState("none");
-  const [data, setData] = useState("none");
 
-  useEffect(() => {
-    setData(treeData);
-  }, []);
+  init(data, setData, modal, setModal, expanded, setExpanded);
 
   useEffect(() => {
     if (onChange) {
       onChange(data);
     }
   }, [data]);
-
-  const deleteItem = item => {
-    let bifFlat = flatten.flatten(data.tree);
-    let smallFlat = flatten.flatten(item);
-
-    Object.keys(smallFlat).map(smallKey => {
-      Object.keys(bifFlat).map(bigKey => {
-        if (
-          bigKey.includes(smallKey) &&
-          bifFlat[bigKey] === smallFlat[smallKey]
-        ) {
-          delete bifFlat[bigKey];
-        }
-      });
-    });
-
-    let tmp = flatten.unflatten(bifFlat);
-    let d = {};
-    let mainArray = [];
-
-    Object.keys(tmp).forEach(key => {
-      mainArray.push(tmp[key]);
-    });
-
-    d.tree = mainArray;
-
-    setData(d);
-  };
-
-  const changeData = (data, item) => {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i]._id === item._id) {
-        data[i] = item;
-      } else if (data[i].children.length > 0) {
-        data[i].children = changeData(data[i].children, item);
-      }
-    }
-
-    return data;
-  };
-
-  const editItem = item => {
-    let bifFlat = flatten.flatten(data.tree);
-
-    let mainArray = changeData(data.tree, item);
-    let d = {};
-    d.tree = mainArray;
-
-    setData(d);
-  };
-
-  const checkActive = id => {
-    let tmpactive = { ...active };
-    tmpactive[id] = tmpactive[id] ? !tmpactive[id] : true;
-    setActive(tmpactive);
-  };
-
-  const makeChild = child => {
-    return (
-      <li key={child._id} id={child._id} style={{ ...lineStyle }}>
-        <span
-          onClick={() =>
-            child.children &&
-            child.children.length > 0 &&
-            checkActive(child._id)
-          }
-          className="li "
-          style={{ padding: compact ? 0 : 12 }}
-        >
-          <Icon
-            rtl={lang && lang.rtl}
-            direction={active[child._id] ? "down" : "right"}
-            type={iconType}
-            hasChildren={child.children && child.children.length > 0}
-            style={{ ...iconStyle }}
-          />
-          <span> {child.item.name}</span>
-          {count && (
-            <span className="yet-count">
-              [
-              {child.children && child.children.length
-                ? child.children.length
-                : 0}
-              ]
-            </span>
-          )}
-          <span style={{ flex: 1 }} />
-          {actions && (
-            <div className="actions">
-              <img
-                src={require("./icons/edit.png").default}
-                className="ripple"
-                alt="edit"
-                onClick={e => {
-                  e.stopPropagation();
-                  let modalItem = {};
-                  modalItem["edit" + Math.random()] = child;
-                  setModal(modalItem);
-                }}
-              />
-              <img
-                src={require("./icons/delete.png").default}
-                className="ripple"
-                alt="delete"
-                onClick={e => {
-                  e.stopPropagation();
-                  let modalItem = {};
-                  modalItem["delete" + Math.random()] = child;
-                  setModal(modalItem);
-                }}
-              />
-            </div>
-          )}
-        </span>
-        {child.children && child.children.length > 0 && (
-          <ul
-            style={{ display: active[child._id] ? "block" : "none", ...style }}
-          >
-            {child.children.map(child2 => makeChild(child2))}
-          </ul>
-        )}
-      </li>
-    );
-  };
 
   return (
     <>
@@ -167,7 +40,19 @@ const Tree = ({
           }}
           id="yet-myUL"
         >
-          {data.tree.map(child => makeChild(child))}
+          {data.tree.map(child =>
+            makeChild(
+              child,
+              style,
+              lineStyle,
+              compact,
+              lang,
+              iconType,
+              iconStyle,
+              count,
+              actions
+            )
+          )}
         </ul>
       )}
 
@@ -177,7 +62,7 @@ const Tree = ({
         editItem={editItem}
         lang={lang && lang.modal}
         rtl={lang && lang.rtl}
-        attributes={itemAttributes}
+        attributes={node}
       />
     </>
   );
@@ -213,9 +98,9 @@ Tree.defaultProps = {
 
 Tree.propTypes = {
   /** Boolean indicating whether the button should render as disabled */
-  treeData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  treeData: PropTypes.object.isRequired,
   /** button label. */
-  lang: PropTypes.arrayOf(PropTypes.object).isRequired,
+  lang: PropTypes.object.isRequired,
   /** onClick handler */
   count: PropTypes.bool,
   /** component styles */
