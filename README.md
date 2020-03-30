@@ -22,7 +22,7 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 
 Demo and documentation : [rht.now.sh](https://rht.now.sh/)
 
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.18.25.png)
+![React Hook Tree Logo](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.18.25.png)
 
 ## Quick start
 
@@ -35,6 +35,10 @@ npm install --save react-hook-tree
 #### YARN
 
 yarn add react-hook-tree
+
+### Run on sandbox
+
+[![Edit pedantic-curran-49riv](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pedantic-curran-49riv?fontsize=14&hidenavigation=1&theme=dark)
 
 ### Example
 

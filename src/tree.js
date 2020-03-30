@@ -77,15 +77,15 @@ Tree.defaultProps = {
       edit: {
         title: "Edit Modal",
         warning: "Check carfully your data before saving !",
-        content: "You are editing the %1 node",
+        content: "You are editing the %%% node",
         button: "save"
       },
       delete: {
         title: "Are you absolutely sure?",
         warning: "Unexpected bad things will happen if you don’t read this!",
         content:
-          "This action cannot be undone. This will permanently delete the %1, and remove all children associations. Please type confirmed to delete.",
-        confirmation: "please type %1 to delete",
+          "This action cannot be undone. This will permanently delete the %%%, and remove all children associations. Please type confirmed to delete.",
+        confirmation: "please type %%% to delete",
         verification: "confirm",
         button: "delete this node"
       }
