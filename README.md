@@ -64,6 +64,10 @@ yarn add react-hook-tree
         ]
     }
 
+    	<Tree treeData={data} iconType="folder" compact={true} itemAttributes={attributes} />
+
+
+
 <Tree treeData={data} iconType="folder" compact={true} node={attributes} />
 
 ### Demo And Documentation
