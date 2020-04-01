@@ -45,28 +45,7 @@ yarn add react-hook-tree
     import data from "./treeData.json";
     import Tree from "react-hook-tree";
 
-    attributes = {
-        [
-    	    {
-    		    name: "title",
-    		    type: "text-input",
-    		    placeholder: "Title",
-    		    class: "col-6"
-    	    },
-    	    {
-    		    name: "active",
-    		    type: "checkbox",
-    		    value: 0,
-    		    datatype: "int",
-    		    label: "activé le type",
-    		    class: "col-6"
-    	    }
-        ]
-    }
-
-    	<Tree treeData={data} iconType="folder" compact={true} itemAttributes={attributes} />
-
-
+    <Tree treeData={data} iconType="folder" compact={true}/>
 
 <Tree treeData={data} iconType="folder" compact={true} node={attributes} />
 
