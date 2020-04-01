@@ -1,7 +1,7 @@
 .ul {
   list-style-type: none;
   font-family: inherit;
-  padding-left: 25px;
+  padding-left: 25px !important;
 }
 
 .yetMyUL {

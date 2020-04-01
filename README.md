@@ -24,34 +24,34 @@ Demo and documentation : [rht.now.sh](https://rht.now.sh/)
 
 ![React Hook Tree Logo](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.18.25.png)
 
-## Quick start
+# Quick start
 
-### Install
+## Install
 
-#### NPM
+### NPM
 
 npm install --save react-hook-tree
 
-#### YARN
+### YARN
 
 yarn add react-hook-tree
 
-### Run on sandbox
+## Run on sandbox
 
 [![Edit pedantic-curran-49riv](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/pedantic-curran-49riv?fontsize=14&hidenavigation=1&theme=dark)
 
-### Example
+## Example
 
     import data from "./treeData.json";
     import Tree from "react-hook-tree";
 
     <Tree treeData={data} iconType="folder" compact={true}/>
 
-### Demo And Documentation
+## Demo And Documentation
 
 [rht.now.sh](https://rht.now.sh/)
 
-### Props
+## Props
 
 ### Data
 
@@ -62,7 +62,7 @@ yarn add react-hook-tree
 | lang     | json     | yes      | -       | Text content, please see [Lang Object Attribute](#lang)                     |
 | node     | json     | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
 | edit     | boolean  | no       | false   | Show the edit button                                                        |
-| remove   | boolean  | no       | false   | Show the delete button                                                      |
+| remove   | boolean  | no       | false   | Show the remove button                                                      |
 | onChange | function | no       | -       | Return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
 
@@ -79,13 +79,14 @@ yarn add react-hook-tree
     	    }
     ]
 
-_See Json example file in Data folder_
+_See data example files in Data folder_
 
 [](#lang)
 
 #### Text content & languages : Lang prop
 
     {
+    		"rtl":true,
         "modal": {
     	    "edit": {
     		    "title": "Edit Modal",
