@@ -9,7 +9,6 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
 
   useEffect(() => {
     let chunks = chunkArray(attributes, 2);
-    console.log(chunks);
     set_attributes_(chunks);
   }, [attributes]);
 
@@ -66,6 +65,7 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
                 _attributes_.map(attrarray => {
                   return (
                     <div
+                      key={Math.random(1000000)}
                       style={{
                         display: "flex",
                         flex: 1,
@@ -78,6 +78,7 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
                             key={attr.name}
                             register={register}
                             attr={attr}
+                            value={object.item[attr.name]}
                           />
                         ))}
                     </div>

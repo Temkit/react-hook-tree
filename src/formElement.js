@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles/tree.css";
 
-const FormElement = ({ attr, register }) => {
+const FormElement = ({ attr, register, value }) => {
   const [Element, setElement] = useState(null);
 
   useEffect(() => {
@@ -14,6 +14,7 @@ const FormElement = ({ attr, register }) => {
             type="text"
             name={attr.name}
             placeholder={attr.placeholder}
+            defaultValue={value}
           />
         );
         break;
@@ -34,6 +35,7 @@ const FormElement = ({ attr, register }) => {
             ref={register}
             name={attr.name}
             type="checkbox"
+            checked={value}
           />
         );
         break;

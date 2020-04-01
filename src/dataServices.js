@@ -155,7 +155,7 @@ const editItem = item => {
   let mainArray = changeData(data__.tree, item);
   let d = {};
   d.tree = mainArray;
-
+  console.log(d);
   setData__(d);
 };
 

@@ -5,11 +5,8 @@
 Get started with React Hook Tree. the **_most powerful Tree View React Component_** for building responsive, mobile-first lightweight
 
 - Data Tree Views
-
 - Display hierarchical data in a tree-view structure.
-
 - Vertical Menus
-
 - File system navigator displaying folders and files
 
 # Full Features
@@ -17,15 +14,10 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 - Expand/Collapse
 - Delete button
 - Edit button
-
 - Custom & multiple node object attributes
-
 - Unlimited nesting
-
 - Fully customizable text content (you can deploy in any language)
-
 - RTL support
-
 - Fully customizable style
 
 Demo and documentation : [rht.now.sh](https://rht.now.sh/)
