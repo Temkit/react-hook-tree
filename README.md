@@ -57,25 +57,25 @@ yarn add react-hook-tree
 
 | Option   | types    | required | default | Description                                                                 |
 | -------- | -------- | -------- | ------- | --------------------------------------------------------------------------- |
-| treeData | Json     | yes      | -       | the data to render (please see json file in example folder)                 |
+| treeData | Json     | yes      | -       | the data to render (please see json file in data folder)                    |
 | count    | boolean  | no       | -       | Show children count on each node                                            |
-| lang     | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                   |
+| lang     | json     | yes      | -       | Text content, please see [Lang Object Attribute](#lang)                     |
 | node     | json     | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
-| edit     | boolean  | no       | false   | Show the edit button on hover                                               |
-| remove   | boolean  | no       | false   | Show the delete button on hover                                             |
-| onChange | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled    |
+| edit     | boolean  | no       | false   | Show the edit button                                                        |
+| remove   | boolean  | no       | false   | Show the delete button                                                      |
+| onChange | function | no       | -       | Return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
 
 [](#data)
 
-#### TreeData : _Attribute data Format_
+#### Data Format : TreeData prop
 
     {
         "tree": [
     	    {
     		    "_id": "...",
     		    "children": [...],
-    		    "item": { "name": "...", children:{...tree}, ... }
+    		    "item": { "name": "...", children:{...}, ... }
     	    }
     ]
 
@@ -83,7 +83,7 @@ _See Json example file in Data folder_
 
 [](#lang)
 
-#### LangData : Lang Attribute
+#### Text content & languages : Lang prop
 
     {
         "modal": {
@@ -107,26 +107,25 @@ _See Json example file in Data folder_
 
 _See Lang example file in Lang folder_
 
-#### <a name="edit"></a> node : _Attribute data Format_
+#### <a name="edit"></a> _Attribute Node Format_ : node props
 
 Each node has a **name** which is an unchanging attribute.
 
-with **node** you can add more attribute to each node, here for example i will add a **title** and a **checkbox**.
+with **node** prop you can add more attribute to each node, here for example i will add a **title** and a **checkbox**.
 
-Each node will be editable over an edit button which triggers a popup modal where you can edit these data you added.
+Each node will be editable over an edit button which triggers a popup modal where you can edit node's data.
 
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.52.58.png)
+![data edit node](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.52.58.png)
 
-you can configure what ever data you want in these types for now **input text** and **checkbox**, more data types will be available in next updates.
+you can configure what ever data you want in these types : **input text** and **checkbox**, more data types will be available in next updates.
 
-each data configuration have these attributes : name, type, placeholder and class
+each data configuration have these attributes : name, type, placeholder
 
     [
         {
     	    name: "title",
     	    type: "text-input",
     	    placeholder: "Title",
-    	    class: "col-6"
         },
 
         {
@@ -135,13 +134,22 @@ each data configuration have these attributes : name, type, placeholder and clas
     	    value: 0,
     	    datatype: "int",
     	    label: "activé le type",
-    	    class: "col-6"
         },
     ]
 
 ![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.55.png)
 
 as you can see the attributes dynamically create a form.
+
+#### Remove
+
+Each node can be removed,
+
+by setting the remove props to true,
+
+if a node is deleted all its children will be deleted, This action cannot be undone. This will permanently delete the node, and remove all children associations.
+
+![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.29.png)
 
 ### Style
 
@@ -156,22 +164,6 @@ as you can see the attributes dynamically create a form.
 ### Text, Content && Languages supports
 
 all the text used have to be added using a [JSON object](#lang), so you can deploy the component in any language you want. you can also add the attribute **"rtl" as true**, to deploy in any _rtl_ languages.
-
-### Actions
-
-#### Edit
-
-You can edit each node simply by setting the edit props to true as explained in [Edit](#edit)
-
-#### Remove
-
-Each node can be deleted,
-
-by setting the remove props to true
-
-if a node is deleted all its children will be deleted, This action cannot be undone. This will permanently delete the node, and remove all children associations.
-
-![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.29.png)
 
 ### Get the data
 
