@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import styles from "./styles/tree.css";
 
 const FormElement = ({ attr, register }) => {
   const [Element, setElement] = useState(null);
@@ -8,6 +9,7 @@ const FormElement = ({ attr, register }) => {
       case "text-input":
         setElement(
           <input
+            className={styles.input}
             ref={register}
             type="text"
             name={attr.name}
@@ -16,15 +18,29 @@ const FormElement = ({ attr, register }) => {
         );
         break;
       case "image":
-        setElement(<input ref={register} name={attr.name} type="file" />);
+        setElement(
+          <input
+            className={styles.input}
+            ref={register}
+            name={attr.name}
+            type="file"
+          />
+        );
         break;
       case "checkbox":
-        setElement(<input ref={register} name={attr.name} type="checkbox" />);
+        setElement(
+          <input
+            className={styles.input}
+            ref={register}
+            name={attr.name}
+            type="checkbox"
+          />
+        );
         break;
     }
   }, [attr]);
 
-  return <div className={attr.class}>{Element}</div>;
+  return <div style={{ flex: 0.5 }}>{Element}</div>;
 };
 
 export default FormElement;

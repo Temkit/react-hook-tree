@@ -47,8 +47,6 @@ yarn add react-hook-tree
 
     <Tree treeData={data} iconType="folder" compact={true}/>
 
-<Tree treeData={data} iconType="folder" compact={true} node={attributes} />
-
 ### Demo And Documentation
 
 [rht.now.sh](https://rht.now.sh/)
@@ -63,7 +61,8 @@ yarn add react-hook-tree
 | count    | boolean  | no       | -       | Show children count on each node                                            |
 | lang     | json     | yes      | -       | Lang Attribute, please see [Lang Object Attribute](#lang)                   |
 | node     | json     | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
-| actions  | boolean  | no       | false   | Show the edit and delete button on hover                                    |
+| edit     | boolean  | no       | false   | Show the edit button on hover                                               |
+| remove   | boolean  | no       | false   | Show the delete button on hover                                             |
 | onChange | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
 
@@ -154,18 +153,6 @@ each data configuration have these attributes : name, type, placeholder and clas
 
 as you can see the attributes dynamically create a form.
 
-you can control the layout using the class property, for those who are used to bootstrap, it's the same philosophy, but here we are using [simple grid](https://github.com/zachacole/Simple-Grid) .
-
-#### Simple philosophy :
-
-col-12 : 100% screen width
-
-col-6 : 50% screen width
-
-col-3 : 25% screen width
-
-Check the link [simple grid](https://github.com/zachacole/Simple-Grid), for more informations.
-
 #### Text
 
 all the text used have to be added using a [JSON object](#lang), so you can deploy the component in any language you want. you can also add the attribute **"rtl" as true**, to deploy in any _rtl_ languages.
@@ -174,11 +161,13 @@ all the text used have to be added using a [JSON object](#lang), so you can depl
 
 ### Edit
 
-You can edit each node as explained in [Edit](#edit)
+You can edit each node simply by setting the edit props to true as explained in [Edit](#edit)
 
-### Delete
+### Remove
 
 Each node can be deleted,
+
+by setting the remove props to true
 
 if a node is deleted all its children will be deleted, This action cannot be undone. This will permanently delete the node, and remove all children associations.
 
@@ -196,13 +185,14 @@ to get the data modified if you use the **onChange** props, you can simply do :
 
     ...
 
-    <Tree treeData={data} onChange={setData} lineStyle={{color: "blue" }} actions={false} />
+    <Tree treeData={data} onChange={setData} lineStyle={{color: "blue" }} />
 
 ### Comming Features
 
 - [x] Add Json language files
 - [x] Add storybook for better documentation
 - [x] Jest test
+- [x] Css module
 - [ ] Checkbox support
 - [ ] Add Multiple node selection
 - [ ] Drag and drop in React Tree View/Tree List

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import FormElement from "./formElement";
 import DeleteModal from "./modal/delete";
 import EditModal from "./modal/edit";
+import modalStyles from "./styles/modal.css";
 
 const Modal = ({ type, attributes, lang, rtl, deleteItem, editItem }) => {
   const [show, setShow] = useState(null);
@@ -21,7 +22,7 @@ const Modal = ({ type, attributes, lang, rtl, deleteItem, editItem }) => {
   return (
     <div
       id="myModal"
-      className="modal"
+      className={modalStyles.modal}
       style={{ display: (show === "edit" || show === "delete") && "block" }}
     >
       {show === "edit" ? (

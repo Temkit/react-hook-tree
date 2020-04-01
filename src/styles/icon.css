@@ -1,8 +1,7 @@
-img {
-  width: 12px;
+.img {
+  width: 18px;
   margin-right: 12px;
   padding: 12px;
-  border-radius: 25px;
 }
 
 .folderIcon {
@@ -12,11 +11,8 @@ img {
   border-radius: 0px;
 }
 
-.actions {
-  display: none;
-}
-
-.actions img {
+.editimg,
+.removeimg {
   width: 21px;
   margin-right: 12px;
   border-radius: 0px;

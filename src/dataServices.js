@@ -1,6 +1,8 @@
 import React from "react";
 import Icon from "./icon";
 import flatten from "flat";
+import styles from "./styles/tree.css";
+import iconStyles from "./styles/icon.css";
 
 var data__;
 var setData__;
@@ -29,7 +31,8 @@ const makeChild = (
   iconType,
   iconStyle,
   count,
-  actions
+  edit,
+  remove
 ) => {
   return (
     <li key={child._id} id={child._id} style={{ ...lineStyle }}>
@@ -39,7 +42,7 @@ const makeChild = (
           child.children.length > 0 &&
           checkExpanded(child._id)
         }
-        className="li "
+        className={`${styles.li} `}
         style={{ padding: compact ? 0 : 12 }}
       >
         <Icon
@@ -51,7 +54,7 @@ const makeChild = (
         />
         <span> {child.item.name}</span>
         {count && (
-          <span className="yet-count">
+          <span className={styles.yetCount}>
             [
             {child.children && child.children.length
               ? child.children.length
@@ -60,11 +63,12 @@ const makeChild = (
           </span>
         )}
         <span style={{ flex: 1 }} />
-        {actions && (
-          <div className="actions">
+
+        {edit && (
+          <div className={iconStyles.edit}>
             <img
               src={require("./icons/edit.png").default}
-              className="ripple"
+              className={`${iconStyles.ripple} ${iconStyles.editimg}`}
               alt="edit"
               onClick={e => {
                 e.stopPropagation();
@@ -73,9 +77,13 @@ const makeChild = (
                 setModal__(modalItem);
               }}
             />
+          </div>
+        )}
+        {remove && (
+          <div className={iconStyles.remove}>
             <img
               src={require("./icons/delete.png").default}
-              className="ripple"
+              className={`${iconStyles.ripple} ${iconStyles.removeimg}`}
               alt="delete"
               onClick={e => {
                 e.stopPropagation();
@@ -89,6 +97,7 @@ const makeChild = (
       </span>
       {child.children && child.children.length > 0 && (
         <ul
+          className={styles.ul}
           style={{
             display: expanded__[child._id] ? "block" : "none",
             ...style
@@ -104,7 +113,8 @@ const makeChild = (
               iconType,
               iconStyle,
               count,
-              actions
+              edit,
+              remove
             )
           )}
         </ul>

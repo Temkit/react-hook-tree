@@ -1,14 +1,9 @@
-@import "./icon.css";
-@import "./modal.css";
-@import "./grid.css";
-@import "./formElement.css";
-
-ul,
-#yet-myUL {
+.ul {
   list-style-type: none;
   font-family: inherit;
 }
-#yet-myUL {
+
+.yetMyUL {
   background: #fafafa;
   box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
@@ -17,22 +12,23 @@ ul,
   padding: 12px;
 }
 
-.li:hover {
-  cursor: pointer;
-  background-color: #c0c0c020;
-}
-
-.li:hover .actions {
-  display: block !important;
-}
-
 .li {
   font-family: inherit;
   display: flex;
   align-items: center;
 }
 
-.yet-caret {
+.li:hover {
+  cursor: pointer;
+  background-color: #c0c0c020;
+}
+
+.li:hover .edit,
+.li:hover .remove {
+  display: block !important;
+}
+
+.yetCaret {
   cursor: pointer;
   -webkit-user-select: none; /* Safari 3.1+ */
   -moz-user-select: none; /* Firefox 2+ */
@@ -40,32 +36,32 @@ ul,
   user-select: none;
 }
 
-.yet-caret::before {
+.yetCaret::before {
   content: "\25B6";
   color: black;
   display: inline-block;
   margin-right: 6px;
 }
 
-.yet-caret-down::before {
+.yetCaret-down::before {
   -ms-transform: rotate(90deg);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-.yet-nested {
+.yetNested {
   display: none;
 }
 
-.yet-active {
+.yetActive {
   display: block;
 }
 
-.yet-count {
+.yetCount {
   padding-left: 12px;
 }
 
-input {
+.input {
   height: 21px;
   font-weight: 400;
   padding: 6px;
@@ -73,12 +69,11 @@ input {
   font-size: 14px;
 }
 
-button {
+.button {
   display: block;
   width: 100%;
   border: none;
   background-color: #e9f1f9;
-  padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
   text-align: center;

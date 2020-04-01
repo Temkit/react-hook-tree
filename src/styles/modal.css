@@ -14,7 +14,7 @@
 }
 
 /* Modal Content */
-.modal-content {
+.modalContent {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -29,13 +29,13 @@
 }
 
 @media only screen and (max-width: 992px) {
-  .modal-content {
+  .modalContent {
     width: 70%;
   }
 }
 
 @media only screen and (max-width: 720px) {
-  .modal-content {
+  .modalContent {
     width: 90%;
   }
 }
@@ -78,12 +78,12 @@
   cursor: pointer;
 }
 
-.modal-header {
+.modalHeader {
   background-color: #f6f8fa;
   color: white;
 }
 
-.modal-body {
+.modalBody {
   padding: 12px;
 }
 
@@ -100,23 +100,7 @@
   padding: 12px;
 }
 
-.delete input {
-  height: 26px;
-  margin-bottom: 12px;
-}
-
-.delete button {
-  height: 32px;
-  text-align: center;
-  font-weight: 700;
-  font-size: 14px;
-}
-
-.delete button:hover {
-  cursor: pointer;
-}
-
-.warinig {
+.warning {
   color: #735c0f;
   background-color: #fffbdd;
   padding: 12px;

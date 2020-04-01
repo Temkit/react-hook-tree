@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Modal from "./modal";
 import { init, makeChild, deleteItem, editItem } from "./dataServices";
 import PropTypes from "prop-types";
-import "./styles/tree.css";
+import styles from "./styles/tree.css";
 
 const Tree = ({
   treeData,
@@ -14,7 +14,9 @@ const Tree = ({
   lineStyle,
   iconStyle,
   compact,
-  actions,
+  edit,
+  remove,
+  debug,
   onChange
 }) => {
   const [expanded, setExpanded] = useState({});
@@ -38,6 +40,7 @@ const Tree = ({
             ...style,
             marginTop: 30
           }}
+          className={`${styles.yetMyUL}  ${styles.ul}`}
           id="yet-myUL"
         >
           {data.tree.map(child =>
@@ -50,7 +53,8 @@ const Tree = ({
               iconType,
               iconStyle,
               count,
-              actions
+              edit,
+              remove
             )
           )}
         </ul>
@@ -93,7 +97,8 @@ Tree.defaultProps = {
   },
   count: false,
   compact: false,
-  actions: false
+  edit: false,
+  remove: false
 };
 
 Tree.propTypes = {
@@ -105,8 +110,10 @@ Tree.propTypes = {
   count: PropTypes.bool,
   /** component styles */
   compact: PropTypes.bool,
-  /** component Actions */
-  actions: PropTypes.bool,
+  /** component edit */
+  edit: PropTypes.bool,
+  /** component remove */
+  remove: PropTypes.bool,
   /** component Get data */
   onChange: PropTypes.func
 };

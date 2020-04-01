@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import FormElement from "./../formElement";
+import modalStyles from "./../styles/modal.css";
+import styles from "./../styles/tree.css";
 
 const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
+  const [_attributes_, set_attributes_] = useState(attributes);
+
+  useEffect(() => {
+    let chunks = chunkArray(attributes, 2);
+    console.log(chunks);
+    set_attributes_(chunks);
+  }, [attributes]);
+
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     let element = { ...object };
@@ -12,62 +22,97 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
   };
 
   return (
-    <div className="modal-content" style={{ direction: rtl ? "rtl" : "ltr" }}>
-      <div className="modal-header">
+    <div
+      className={modalStyles.modalContent}
+      style={{ direction: rtl ? "rtl" : "ltr" }}
+    >
+      <div className={modalStyles.modalHeader}>
         <span
-          className="close"
+          className={modalStyles.close}
           style={{ float: rtl ? "left" : "right" }}
           onClick={() => setShow(false)}
         >
           &times;
         </span>
-        <h2 className="h2">{lang.title}</h2>
-        <div className="warinig">{lang.warning}</div>
+        <h2 className={modalStyles.h2}>{lang.title}</h2>
+        <div className={modalStyles.warning}>{lang.warning}</div>
       </div>
-      <div className="modal-body">
+      <div className={modalStyles.modalBody}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="container">
-            <div className="row">
-              <div className="col-12">
-                <p>
-                  {object &&
-                    object.item &&
-                    lang.content.replace("%%%", object.item.name)}
-                </p>
-              </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div style={{ flex: 1 }}>
+              {object && object.item && (
+                <p
+                  dangerouslySetInnerHTML={createHtml(
+                    lang.content,
+                    object.item.name
+                  )}
+                ></p>
+              )}
             </div>
-            <div className="row">
-              <div className="col-12">
-                {object && object.item && (
-                  <input
-                    ref={register}
-                    type="text"
-                    name="name"
-                    defaultValue={object.item.name}
-                  />
-                )}
-              </div>
+            <div style={{ flex: 1 }}>
+              {object && object.item && (
+                <input
+                  className={styles.input}
+                  ref={register}
+                  type="text"
+                  name="name"
+                  defaultValue={object.item.name}
+                />
+              )}
             </div>
-            <div className="row">
-              {attributes &&
-                attributes.map(attr => (
-                  <FormElement
-                    key={attr.name}
-                    register={register}
-                    attr={attr}
-                  />
-                ))}
+            <div style={{ flex: 1 }}>
+              {_attributes_ &&
+                _attributes_.map(attrarray => {
+                  return (
+                    <div
+                      style={{
+                        display: "flex",
+                        flex: 1,
+                        marginTop: 8
+                      }}
+                    >
+                      {Array.isArray(attrarray) &&
+                        attrarray.map(attr => (
+                          <FormElement
+                            key={attr.name}
+                            register={register}
+                            attr={attr}
+                          />
+                        ))}
+                    </div>
+                  );
+                })}
             </div>
-            <div className="row">
-              <div className="col-lg-12">
-                <button type="submit">{lang.button}</button>
-              </div>
+            <div style={{ flex: 1, marginTop: 12 }}>
+              <button className={styles.button} type="submit">
+                {lang.button}
+              </button>
             </div>
           </div>
         </form>
       </div>
     </div>
   );
+};
+
+const chunkArray = (data, chunk_size) => {
+  var index = 0;
+  var arrayLength = data.length;
+  var tempArray = [];
+
+  for (index = 0; index < arrayLength; index += chunk_size) {
+    let myChunk = data.slice(index, index + chunk_size);
+    tempArray.push(myChunk);
+  }
+
+  return tempArray;
+};
+
+const createHtml = (c, replace) => {
+  let content = c.replace("%%%", "<strong>" + replace + "</strong>");
+
+  return { __html: content };
 };
 
 export default EditModal;
