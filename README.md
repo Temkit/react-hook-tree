@@ -53,7 +53,7 @@ yarn add react-hook-tree
 
 ### Props
 
-#### Data
+### Data
 
 | Option   | types    | required | default | Description                                                                 |
 | -------- | -------- | -------- | ------- | --------------------------------------------------------------------------- |
@@ -65,6 +65,21 @@ yarn add react-hook-tree
 | remove   | boolean  | no       | false   | Show the delete button on hover                                             |
 | onChange | function | no       | -       | return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
+
+[](#data)
+
+#### TreeData : _Attribute data Format_
+
+    {
+        "tree": [
+    	    {
+    		    "_id": "...",
+    		    "children": [...],
+    		    "item": { "name": "...", children:{...tree}, ... }
+    	    }
+    ]
+
+_See Json example file in Data folder_
 
 [](#lang)
 
@@ -92,32 +107,7 @@ yarn add react-hook-tree
 
 _See Lang example file in Lang folder_
 
-[](#data)
-
-#### TreeData : _Attribute data Format_
-
-    {
-        "tree": [
-    	    {
-    		    "_id": "...",
-    		    "children": [...],
-    		    "item": { "name": "...", children:{...tree}, ... }
-    	    }
-    ]
-
-_See Json example file in Data folder_
-
-#### Style
-
-| Option    | types             | required | Description                                                         |
-| --------- | ----------------- | -------- | ------------------------------------------------------------------- |
-| iconType  | string            | no       | one of ("folder","rounded","thick") or leave empty for simple arrow |
-| style     | React Style Props | no       | Global container inline style                                       |
-| lineStyle | React Style Props | no       | Line inline style                                                   |
-| iconStyle | React Style Props | no       | Icon inline style                                                   |
-| compact   | boolean           | no       | add padding to line                                                 |
-
-### <a name="edit"></a> node : _Attribute data Format_
+#### <a name="edit"></a> node : _Attribute data Format_
 
 Each node has a **name** which is an unchanging attribute.
 
@@ -153,17 +143,27 @@ each data configuration have these attributes : name, type, placeholder and clas
 
 as you can see the attributes dynamically create a form.
 
-#### Text
+### Style
+
+| Option    | types             | required | Description                                                         |
+| --------- | ----------------- | -------- | ------------------------------------------------------------------- |
+| iconType  | string            | no       | one of ("folder","rounded","thick") or leave empty for simple arrow |
+| style     | React Style Props | no       | Global container inline style                                       |
+| lineStyle | React Style Props | no       | Line inline style                                                   |
+| iconStyle | React Style Props | no       | Icon inline style                                                   |
+| compact   | boolean           | no       | add padding to line                                                 |
+
+### Text, Content && Languages supports
 
 all the text used have to be added using a [JSON object](#lang), so you can deploy the component in any language you want. you can also add the attribute **"rtl" as true**, to deploy in any _rtl_ languages.
 
-## Actions
+### Actions
 
-### Edit
+#### Edit
 
 You can edit each node simply by setting the edit props to true as explained in [Edit](#edit)
 
-### Remove
+#### Remove
 
 Each node can be deleted,
 
@@ -173,7 +173,7 @@ if a node is deleted all its children will be deleted, This action cannot be und
 
 ![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.29.png)
 
-## Get the data
+### Get the data
 
 to get the data modified if you use the **onChange** props, you can simply do :
 
