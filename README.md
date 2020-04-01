@@ -1,23 +1,31 @@
 ![React Hook tree](https://s3.eu-west-3.amazonaws.com/img.yet.expert/rht/logo512.png)
 
-## Introduction
+# Introduction
 
 Get started with React Hook Tree. the **_most powerful Tree View React Component_** for building responsive, mobile-first lightweight
 
 - Data Tree Views
+
 - Display hierarchical data in a tree-view structure.
+
 - Vertical Menus
+
 - File system navigator displaying folders and files
 
-## Full Features
+# Full Features
 
 - Expand/Collapse
 - Delete button
 - Edit button
+
 - Custom & multiple node object attributes
+
 - Unlimited nesting
+
 - Fully customizable text content (you can deploy in any language)
+
 - RTL support
+
 - Fully customizable style
 
 Demo and documentation : [rht.now.sh](https://rht.now.sh/)
@@ -45,7 +53,7 @@ yarn add react-hook-tree
     import data from "./treeData.json";
     import Tree from "react-hook-tree";
 
-    <Tree treeData={data} iconType="folder" compact={true}/>
+    <Tree treeData={data} />
 
 ## Demo And Documentation
 
@@ -55,38 +63,38 @@ yarn add react-hook-tree
 
 ### Data
 
-| Option   | types    | required | default | Description                                                                 |
-| -------- | -------- | -------- | ------- | --------------------------------------------------------------------------- |
-| treeData | Json     | yes      | -       | the data to render (please see json file in data folder)                    |
-| count    | boolean  | no       | -       | Show children count on each node                                            |
-| lang     | json     | yes      | -       | Text content, please see [Lang Object Attribute](#lang)                     |
-| node     | json     | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
-| edit     | boolean  | no       | false   | Show the edit button                                                        |
-| remove   | boolean  | no       | false   | Show the remove button                                                      |
-| onChange | function | no       | -       | Return the modified json data, if actions (edit, delete) are are enabled    |
+| Option   | types       | required | default | Description                                                                 |
+| -------- | ----------- | -------- | ------- | --------------------------------------------------------------------------- |
+| treeData | Json Object | yes      | -       | the data to render (please see json file in data folder)                    |
+| count    | Boolean     | no       | -       | Show children count on each node                                            |
+| lang     | Json Object | yes      | -       | Text content, please see [Lang Object Attribute](#lang)                     |
+| node     | Json Object | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
+| edit     | Boolean     | no       | false   | Show the edit button                                                        |
+| remove   | Boolean     | no       | false   | Show the remove button                                                      |
+| onChange | Function    | no       | -       | Return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
 
 [](#data)
 
-### Data Format : TreeData prop
+### Data Format : _TreeData_ prop
 
     {
         "tree": [
     	    {
-    		    "_id": "...",
-    		    "children": [...],
-    		    "item": { "name": "...", children:{...}, ... }
-    	    }
+    	    "_id": "...",
+    	    "children": [...],
+    	    "item": { "name": "...", children:{...}, ... }
+        }
     ]
 
 _See data example files in Data folder_
 
 [](#lang)
 
-### Text content & languages : Lang prop
+### Text, content & languages : _Lang_ prop
 
     {
-    		"rtl":true,
+        "rtl":true,
         "modal": {
     	    "edit": {
     		    "title": "Edit Modal",
@@ -94,7 +102,6 @@ _See data example files in Data folder_
     		    "content": "You are editing the %1 node",
     		    "button": "save"
     	    },
-
     	    "delete": {
     		    "title": "Are you absolutely sure?",
     		    "warning": "Unexpected bad things will happen if you don’t read this!",
@@ -108,7 +115,7 @@ _See data example files in Data folder_
 
 _See Lang example file in Lang folder_
 
-### <a name="edit"></a> _Attribute Node Format_ : node props And Edit actioin
+### Edit action : _node_ props
 
 Each node has a **name** which is an unchanging attribute.
 
@@ -136,11 +143,12 @@ each data configuration have these attributes : name, type, placeholder
     	    datatype: "int",
     	    label: "activé le type",
         },
+
     ]
 
 ![enter image description here](https://temkit-sidali.s3.eu-west-3.amazonaws.com/Capture%20d%E2%80%99e%CC%81cran%202020-03-18%20a%CC%80%2016.19.55.png)
 
-as you can see the attributes dynamically create a form.
+as you can see the attributes are used to dynamically create a form to edit the node's data.
 
 ### Remove Action
 
@@ -156,11 +164,11 @@ if a node is deleted all its children will be deleted, This action cannot be und
 
 | Option    | types             | required | Description                                                         |
 | --------- | ----------------- | -------- | ------------------------------------------------------------------- |
-| iconType  | string            | no       | one of ("folder","rounded","thick") or leave empty for simple arrow |
+| iconType  | String            | no       | one of ("folder","rounded","thick") or leave empty for simple arrow |
 | style     | React Style Props | no       | Global container inline style                                       |
 | lineStyle | React Style Props | no       | Line inline style                                                   |
 | iconStyle | React Style Props | no       | Icon inline style                                                   |
-| compact   | boolean           | no       | add padding to line                                                 |
+| compact   | Boolean           | no       | add padding to line                                                 |
 
 ## Text, Content && Languages supports
 
@@ -173,33 +181,50 @@ to get the data modified if you use the **onChange** props, you can simply do :
     const [data, setData] = useState(json);
 
     useEffect(() => {
-    console.log(data);
+        console.log(data);
     }, [data]);
 
     ...
 
     <Tree treeData={data} onChange={setData} lineStyle={{color: "blue" }} />
 
-## Comming Features
+
+
+## Coming Features
 
 - [x] Add Json language files
 - [x] Add storybook for better documentation
 - [x] Jest test
 - [x] Css module
+
 - [ ] Checkbox support
+
 - [ ] Add Multiple node selection
+
 - [ ] Drag and drop in React Tree View/Tree List
+
 - [ ] Sorting tree nodes
+
 - [ ] Tree node with custom icons
+
 - [ ] Delete & Edit animation
+
 - [ ] Style modal
+
 - [ ] Lazy loading
+
 - [ ] Better Readme and fix the spelling errors :)
+
 - [ ] Create a dedicated website
+
 - [ ] Create a slack and provide free support
+
 - [ ] Codes & Algorithmes optimisation
+
 - [ ] Writing contributing guidelines
+
 - [ ] Pull request template
+
 - [ ] Issue templates
 
 feel free to ask for any feature or report a bug buy add in a new issue [add new issue ](https://github.com/Temkit/react-hook-tree/issues/new)
@@ -207,19 +232,14 @@ feel free to ask for any feature or report a bug buy add in a new issue [add new
 ## License
 
 Copyright (c) 2020 **Temkit Sidali**.
-
 Licensed under the MIT license.
 
 **_Icons from_** [www.flaticon.com](https://www.flaticon.com/) **_From_** :
 
 - [Those Icon](https://www.flaticon.com/authors/those-icons)
-
 - [Dave Gandy](https://www.flaticon.com/authors/dave-gandy)
 
 **_Dependencies :_**
 
-- [simple grid](https://github.com/zachacole/Simple-Grid)
-
 - [react-hook-form](https://github.com/react-hook-form/react-hook-form)
-
 - [hughsk/flat](https://github.com/hughsk/flat)
