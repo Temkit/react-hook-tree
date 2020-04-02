@@ -23,6 +23,7 @@ Get started with React Hook Tree. the **_most powerful Tree View React Component
 Demo and documentation : [rht.now.sh](https://rht.now.sh/)
 
 ![React Hook Tree in action](https://s3.eu-west-3.amazonaws.com/img.yet.expert/rht.gif)
+<img src="./rht.gif" data-canonical-src="./rht.gif" />
 
 # Quick start
 
