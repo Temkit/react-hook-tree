@@ -35,7 +35,7 @@ const FormElement = ({ attr, register, value }) => {
             ref={register}
             name={attr.name}
             type="checkbox"
-            checked={value}
+            defaultChecked={value}
           />
         );
         break;

@@ -1,6 +1,9 @@
 .img {
   width: 10px;
-  margin-right: 12px;
+  padding: 12px;
+  border-radius: 25px;
+  margin-right: 3px;
+  margin-left: 3px;
 }
 
 .folderIcon {
