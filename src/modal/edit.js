@@ -8,8 +8,10 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
   const [_attributes_, set_attributes_] = useState(attributes);
 
   useEffect(() => {
-    let chunks = chunkArray(attributes, 2);
-    set_attributes_(chunks);
+    if (attributes && attributes.length > 0) {
+      let chunks = chunkArray(attributes, 2);
+      set_attributes_(chunks);
+    }
   }, [attributes]);
 
   const { register, handleSubmit, errors } = useForm();

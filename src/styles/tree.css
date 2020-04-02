@@ -10,7 +10,7 @@
     0 1px 3px 0 rgba(0, 0, 0, 0.12);
   margin-top: 20px;
   margin: 0;
-  padding: 12px;
+  padding-left: 0px !important;
 }
 
 .li {
