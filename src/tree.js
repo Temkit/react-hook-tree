@@ -7,6 +7,7 @@ import styles from "./styles/tree.css";
 const Tree = ({
   treeData,
   lang,
+  checkbox,
   count,
   node,
   iconType,
@@ -45,6 +46,7 @@ const Tree = ({
         >
           {data.tree.map(child =>
             makeChild(
+              checkbox,
               child,
               style,
               lineStyle,
@@ -95,6 +97,7 @@ Tree.defaultProps = {
       }
     }
   },
+  checkbox: false,
   count: false,
   compact: false,
   edit: false,
@@ -107,6 +110,7 @@ Tree.propTypes = {
   /** button label. */
   lang: PropTypes.object.isRequired,
   /** onClick handler */
+  checkbox: PropTypes.bool,
   count: PropTypes.bool,
   /** component styles */
   compact: PropTypes.bool,

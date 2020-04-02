@@ -3,6 +3,7 @@ import Icon from "./icon";
 import flatten from "flat";
 import styles from "./styles/tree.css";
 import iconStyles from "./styles/icon.css";
+import checkStyles from "./styles/checkbox.css";
 
 var data__;
 var setData__;
@@ -23,6 +24,7 @@ const init = (data, setData, modal, setModal, expanded, setExpanded) => {
 };
 
 const makeChild = (
+  checkbox,
   child,
   style,
   lineStyle,
@@ -52,7 +54,25 @@ const makeChild = (
           hasChildren={child.children && child.children.length > 0}
           style={{ ...iconStyle }}
         />
-        <span> {child.item.name}</span>
+        {checkbox ? (
+          <label className={checkStyles.checkboxContainer}>
+            {child.item.name}
+            <input
+              type="checkbox"
+              id={child._id}
+              name={child._id}
+              defaultChecked={child.check}
+              onClick={e => {
+                let item = { ...child };
+                item.checked = e.target.checked;
+                editItem(item);
+              }}
+            />
+            <span className={checkStyles.checkmark}></span>
+          </label>
+        ) : (
+          <span> {child.item.name}</span>
+        )}
         {count && (
           <span className={styles.yetCount}>
             [
@@ -105,6 +125,7 @@ const makeChild = (
         >
           {child.children.map(child2 =>
             makeChild(
+              checkbox,
               child2,
               style,
               lineStyle,

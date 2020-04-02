@@ -58,6 +58,7 @@ yarn add react-hook-tree
 | Option   | types       | required | default | Description                                                                 |
 | -------- | ----------- | -------- | ------- | --------------------------------------------------------------------------- |
 | treeData | Json Object | yes      | -       | the data to render (please see json file in data folder)                    |
+| checkbox | Boolean     | no       | -       | Show check box and add select support for nodes                             |
 | count    | Boolean     | no       | -       | Show children count on each node                                            |
 | lang     | Json Object | yes      | -       | Text content, please see [Lang Object Attribute](#lang)                     |
 | node     | Json Object | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
@@ -180,43 +181,26 @@ to get the data modified if you use the **onChange** props, you can simply do :
 
     <Tree treeData={data} onChange={setData} lineStyle={{color: "blue" }} />
 
-
-
 ## Coming Features
 
 - [x] Add Json language files
 - [x] Add storybook for better documentation
 - [x] Jest test
 - [x] Css module
-
-- [ ] Checkbox support
-
+- [x] Checkbox select
 - [ ] Add Multiple node selection
-
 - [ ] Drag and drop in React Tree View/Tree List
-
 - [ ] Sorting tree nodes
-
 - [ ] Tree node with custom icons
-
 - [ ] Delete & Edit animation
-
 - [ ] Style modal
-
 - [ ] Lazy loading
-
 - [ ] Better Readme and fix the spelling errors :)
-
 - [ ] Create a dedicated website
-
 - [ ] Create a slack and provide free support
-
 - [ ] Codes & Algorithmes optimisation
-
 - [ ] Writing contributing guidelines
-
 - [ ] Pull request template
-
 - [ ] Issue templates
 
 feel free to ask for any feature or report a bug buy add in a new issue [add new issue ](https://github.com/Temkit/react-hook-tree/issues/new)
