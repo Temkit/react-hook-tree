@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Modal from "./modal";
-import { init, makeChild, deleteItem, editItem } from "./dataServices";
+import { init, deleteItem, addItem, editItem, makeChild } from "./dataServices";
 import PropTypes from "prop-types";
 import styles from "./styles/tree.css";
 
@@ -15,10 +15,11 @@ const Tree = ({
   lineStyle,
   iconStyle,
   compact,
+  add,
   edit,
   remove,
   debug,
-  onChange
+  onChange,
 }) => {
   const [expanded, setExpanded] = useState({});
   const [data, setData] = useState(treeData);
@@ -39,12 +40,12 @@ const Tree = ({
           style={{
             direction: lang && lang.rtl ? "rtl" : "ltr",
             ...style,
-            marginTop: 30
+            marginTop: 30,
           }}
           className={`${styles.yetMyUL}  ${styles.ul}`}
           id="yet-myUL"
         >
-          {data.tree.map(child =>
+          {data.tree.map((child) =>
             makeChild(
               checkbox,
               child,
@@ -55,6 +56,7 @@ const Tree = ({
               iconType,
               iconStyle,
               count,
+              add,
               edit,
               remove
             )
@@ -66,6 +68,7 @@ const Tree = ({
         type={modal}
         deleteItem={deleteItem}
         editItem={editItem}
+        addItem={addItem}
         lang={lang && lang.modal}
         rtl={lang && lang.rtl}
         attributes={node}
@@ -76,15 +79,21 @@ const Tree = ({
 
 Tree.defaultProps = {
   treeData: {
-    tree: []
+    tree: [],
   },
   lang: {
     modal: {
+      add: {
+        title: "Add Modal",
+        warning: "Check carfully your data before saving !",
+        content: "You are Adding the %1 node",
+        button: "save",
+      },
       edit: {
         title: "Edit Modal",
         warning: "Check carfully your data before saving !",
         content: "You are editing the %%% node",
-        button: "save"
+        button: "save",
       },
       delete: {
         title: "Are you absolutely sure?",
@@ -93,15 +102,16 @@ Tree.defaultProps = {
           "This action cannot be undone. This will permanently delete the %%%, and remove all children associations. Please type confirmed to delete.",
         confirmation: "please type %%% to delete",
         verification: "confirm",
-        button: "delete this node"
-      }
-    }
+        button: "delete this node",
+      },
+    },
   },
   checkbox: false,
   count: false,
   compact: false,
   edit: false,
-  remove: false
+  add: false,
+  remove: false,
 };
 
 Tree.propTypes = {
@@ -116,10 +126,12 @@ Tree.propTypes = {
   compact: PropTypes.bool,
   /** component edit */
   edit: PropTypes.bool,
+  /** component edit */
+  add: PropTypes.bool,
   /** component remove */
   remove: PropTypes.bool,
   /** component Get data */
-  onChange: PropTypes.func
+  onChange: PropTypes.func,
 };
 
 export default Tree;

@@ -33,6 +33,7 @@ const makeChild = (
   iconType,
   iconStyle,
   count,
+  add,
   edit,
   remove
 ) => {
@@ -62,7 +63,7 @@ const makeChild = (
               id={child._id}
               name={child._id}
               defaultChecked={child.check}
-              onClick={e => {
+              onClick={(e) => {
                 let item = { ...child };
                 item.checked = e.target.checked;
                 editItem(item);
@@ -84,13 +85,28 @@ const makeChild = (
         )}
         <span style={{ flex: 1 }} />
 
+        {add && (
+          <div className={iconStyles.add}>
+            <img
+              src={require("./icons/add.png").default}
+              className={`${iconStyles.ripple} ${iconStyles.addimg}`}
+              alt="add"
+              onClick={(e) => {
+                e.stopPropagation();
+                let modalItem = {};
+                modalItem["add" + Math.random()] = child;
+                setModal__(modalItem);
+              }}
+            />
+          </div>
+        )}
         {edit && (
           <div className={iconStyles.edit}>
             <img
               src={require("./icons/edit.png").default}
               className={`${iconStyles.ripple} ${iconStyles.editimg}`}
               alt="edit"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 let modalItem = {};
                 modalItem["edit" + Math.random()] = child;
@@ -105,7 +121,7 @@ const makeChild = (
               src={require("./icons/delete.png").default}
               className={`${iconStyles.ripple} ${iconStyles.removeimg}`}
               alt="delete"
-              onClick={e => {
+              onClick={(e) => {
                 e.stopPropagation();
                 let modalItem = {};
                 modalItem["delete" + Math.random()] = child;
@@ -120,10 +136,10 @@ const makeChild = (
           className={styles.ul}
           style={{
             display: expanded__[child._id] ? "block" : "none",
-            ...style
+            ...style,
           }}
         >
-          {child.children.map(child2 =>
+          {child.children.map((child2) =>
             makeChild(
               checkbox,
               child2,
@@ -134,6 +150,7 @@ const makeChild = (
               iconType,
               iconStyle,
               count,
+              add,
               edit,
               remove
             )
@@ -144,7 +161,7 @@ const makeChild = (
   );
 };
 
-const deleteItem = item => {
+const deleteItem = (item) => {
   let bifFlat = flatten.flatten(data__.tree);
   let smallFlat = flatten.flatten(item);
 
@@ -163,7 +180,7 @@ const deleteItem = item => {
   let d = {};
   let mainArray = [];
 
-  Object.keys(tmp).forEach(key => {
+  Object.keys(tmp).forEach((key) => {
     mainArray.push(tmp[key]);
   });
 
@@ -172,15 +189,22 @@ const deleteItem = item => {
   setData__(d);
 };
 
-const editItem = item => {
+const addItem = (item) => {
+  console.log(item);
   let mainArray = changeData(data__.tree, item);
   let d = {};
   d.tree = mainArray;
-  console.log(d);
   setData__(d);
 };
 
-const checkExpanded = id => {
+const editItem = (item) => {
+  let mainArray = changeData(data__.tree, item);
+  let d = {};
+  d.tree = mainArray;
+  setData__(d);
+};
+
+const checkExpanded = (id) => {
   let tmpexpanded = { ...expanded__ };
   tmpexpanded[id] = tmpexpanded[id] ? !tmpexpanded[id] : true;
 
@@ -199,4 +223,4 @@ const changeData = (data, item) => {
   return data;
 };
 
-export { init, deleteItem, editItem, makeChild };
+export { init, deleteItem, addItem, editItem, makeChild };

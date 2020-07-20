@@ -2,18 +2,13 @@
 
 # Introduction
 
-Get started with React Hook Tree. the **_most powerful Tree View React Component_** for building responsive, mobile-first lightweight
-
-- Data Tree Views
-- Display hierarchical data in a tree-view structure.
-- Vertical Menus
-- File system navigator displaying folders and files
+Get started with React Hook Tree. the **_most powerful Tree View React Component_** for building responsive, mobile-first lightweight Trees.
 
 # Full Features
 
+- Display hierarchical data in a tree-view structure.
+- Edit, Add and Delete nodes
 - Expand/Collapse
-- Delete button
-- Edit button
 - Custom & multiple node object attributes
 - Unlimited nesting
 - Fully customizable text content (you can deploy in any language)
@@ -63,6 +58,7 @@ yarn add react-hook-tree
 | lang     | Json Object | yes      | -       | Text content, please see [Lang Object Attribute](#lang)                     |
 | node     | Json Object | no       | -       | Node object attributes Attribute, please see [Data Object Attribute](#data) |
 | edit     | Boolean     | no       | false   | Show the edit button                                                        |
+| add      | Boolean     | no       | false   | Show the add button                                                         |
 | remove   | Boolean     | no       | false   | Show the remove button                                                      |
 | onChange | Function    | no       | -       | Return the modified json data, if actions (edit, delete) are are enabled    |
 |          |
@@ -72,11 +68,11 @@ yarn add react-hook-tree
 ### Data Format : _TreeData_ prop
 
     {
-        "tree": [
+        tree: [
     	    {
-    	    "_id": "...",
-    	    "children": [...],
-    	    "item": { "name": "...", children:{...}, ... }
+    	    _id: "",
+    	    children: []
+    	    item: { name: "", ... }
         }
     ]
 
@@ -89,6 +85,12 @@ _See data example files in Data folder_
     {
         "rtl":true,
         "modal": {
+    				"add": {
+    					"title": "Add Modal",
+    					"warning": "Check carfully your data before saving !",
+    					"content": "You are Adding a new node",
+    					"button": "save"
+    				},
     	    "edit": {
     		    "title": "Edit Modal",
     		    "warning": "Check carfully your data before saving !",
@@ -108,7 +110,7 @@ _See data example files in Data folder_
 
 _See Lang example file in Lang folder_
 
-### Edit action : _node_ props
+### Add Edit action : _node_ props
 
 Each node has a **name** which is an unchanging attribute.
 
@@ -188,6 +190,7 @@ to get the data modified if you use the **onChange** props, you can simply do :
 - [x] Jest test
 - [x] Css module
 - [x] Checkbox select
+- [x] Add new nodes
 - [ ] Add Multiple node selection
 - [ ] Drag and drop in React Tree View/Tree List
 - [ ] Sorting tree nodes

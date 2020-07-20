@@ -4,7 +4,7 @@ import FormElement from "./../formElement";
 import modalStyles from "./../styles/modal.css";
 import styles from "./../styles/tree.css";
 
-const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
+const addModal = ({ object, addItem, lang, rtl, setShow, attributes }) => {
   const [_attributes_, set_attributes_] = useState(attributes);
 
   useEffect(() => {
@@ -16,10 +16,12 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
 
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
-    let element = { ...object };
-    element.item = data;
-    console.log(element);
-    editItem(element);
+    let element = {
+      ...object,
+      children: [...object.children, { _id: new Date().getTime(), item: data }],
+    };
+
+    addItem(element);
     setShow(null);
   };
 
@@ -43,25 +45,16 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ flex: 1 }}>
-              {object && object.item && (
-                <p
-                  dangerouslySetInnerHTML={createHtml(
-                    lang.content,
-                    object.item.name
-                  )}
-                ></p>
-              )}
+              <p dangerouslySetInnerHTML={createHtml(lang.content, "")}></p>
             </div>
             <div style={{ flex: 1 }}>
-              {object && object.item && (
-                <input
-                  className={styles.input}
-                  ref={register}
-                  type="text"
-                  name="name"
-                  defaultValue={object.item.name}
-                />
-              )}
+              <input
+                className={styles.input}
+                ref={register}
+                type="text"
+                name="name"
+                defaultValue=""
+              />
             </div>
             <div style={{ flex: 1 }}>
               {_attributes_ &&
@@ -81,7 +74,7 @@ const EditModal = ({ object, editItem, lang, rtl, setShow, attributes }) => {
                             key={attr.name}
                             register={register}
                             attr={attr}
-                            value={object.item[attr.name]}
+                            value=""
                           />
                         ))}
                     </div>
@@ -119,4 +112,4 @@ const createHtml = (c, replace) => {
   return { __html: content };
 };
 
-export default EditModal;
+export default addModal;
