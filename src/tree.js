@@ -86,7 +86,7 @@ Tree.defaultProps = {
       add: {
         title: "Add Modal",
         warning: "Check carfully your data before saving !",
-        content: "You are Adding the %1 node",
+        content: "You are Adding a new node",
         button: "save",
       },
       edit: {
