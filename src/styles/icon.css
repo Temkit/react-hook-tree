@@ -1,7 +1,7 @@
 .img {
-  width: 10px;
-  padding: 12px;
-  border-radius: 25px;
+  width: 25px;
+  padding: 5px;
+  border-radius: 25px !important;
   margin-right: 3px;
   margin-left: 3px;
 }
@@ -10,7 +10,7 @@
   width: 21px;
   margin-right: 12px;
   padding: 6px;
-  border-radius: 0px;
+  border-radius: 0px !important;
 }
 
 .addimg,
@@ -18,7 +18,7 @@
 .removeimg {
   width: 21px;
   margin-right: 12px;
-  border-radius: 0px;
+  border-radius: 0px !important;
   padding: 0px;
 }
 
